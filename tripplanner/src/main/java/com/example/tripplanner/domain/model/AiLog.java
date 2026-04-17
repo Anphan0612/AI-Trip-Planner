@@ -33,6 +33,10 @@ public class AiLog {
     private Integer retryCount;
     private String errorMessage;
 
+    private String validationType;
+    private Long executionTime;
+    private String promptVersion;
+
     private LocalDateTime createdAt;
 
     @PrePersist

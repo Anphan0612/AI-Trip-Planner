@@ -21,7 +21,7 @@ public class OpenRouterAiService implements AiServicePort {
     @Override
     public Map<String, Object> callAi(String prompt) {
         Map<String, Object> requestBody = Map.of(
-            "model", "mistralai/mistral-7b-instruct:free",
+            "model", "google/gemma-4-26b-a4b-it:free",
             "messages", List.of(
                 Map.of("role", "user", "content", prompt)
             )
@@ -30,6 +30,8 @@ public class OpenRouterAiService implements AiServicePort {
         return webClient.post()
             .uri("https://openrouter.ai/api/v1/chat/completions")
             .header("Authorization", "Bearer " + apiKey)
+            .header("HTTP-Referer", "http://localhost:8081")
+            .header("X-Title", "TripPlanner")
             .header("Content-Type", "application/json")
             .bodyValue(requestBody)
             .retrieve()
