@@ -6,6 +6,9 @@ import type {
   CreateTripRequest,
   GenerateRequest,
   RegenerateRequest,
+  ActivityResponse,
+  ActivityRequest,
+  ActivityUpdateRequest,
 } from '../types/trip';
 
 // Base API client pointing at Spring Boot backend
@@ -41,6 +44,22 @@ export const tripApi = {
 export const itineraryApi = {
   getByTrip: (tripId: string): Promise<ItineraryResponse[]> =>
     apiClient.get(`/trips/${tripId}/itineraries`).then(r => r.data),
+
+  regenerateDay: (tripId: string, itineraryId: string, body?: RegenerateRequest): Promise<ItineraryResponse> =>
+    apiClient.post(`/trips/${tripId}/itineraries/${itineraryId}/regenerate`, body ?? {}).then(r => r.data),
+};
+
+// ── Activity endpoints ──────────────────────────────────────────────────────
+
+export const activityApi = {
+  create: (itineraryId: string, body: ActivityRequest): Promise<ActivityResponse> =>
+    apiClient.post(`/itineraries/${itineraryId}/activities`, body).then(r => r.data),
+
+  update: (itineraryId: string, activityId: string, body: ActivityUpdateRequest): Promise<ActivityResponse> =>
+    apiClient.put(`/itineraries/${itineraryId}/activities/${activityId}`, body).then(r => r.data),
+
+  delete: (itineraryId: string, activityId: string): Promise<void> =>
+    apiClient.delete(`/itineraries/${itineraryId}/activities/${activityId}`).then(r => r.data),
 };
 
 // ── AI assist endpoints ─────────────────────────────────────────────────────

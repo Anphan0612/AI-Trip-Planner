@@ -3,25 +3,29 @@ package com.example.tripplanner.infrastructure.persistence;
 import com.example.tripplanner.domain.model.Activity;
 import com.example.tripplanner.domain.port.ActivityRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
 
-@Component
+@Repository
 @RequiredArgsConstructor
 public class ActivityRepositoryImpl implements ActivityRepository {
 
     private final JpaActivityRepository jpaRepository;
+    private final PersistenceMapper mapper;
 
     @Override
     public Activity save(Activity activity) {
-        return jpaRepository.save(activity);
+        ActivityEntity entity = mapper.toEntity(activity);
+        ActivityEntity savedEntity = jpaRepository.save(entity);
+        return mapper.toDomain(savedEntity);
     }
 
     @Override
     public Optional<Activity> findById(UUID id) {
-        return jpaRepository.findById(id);
+        return jpaRepository.findById(id)
+                .map(mapper::toDomain);
     }
 
     @Override

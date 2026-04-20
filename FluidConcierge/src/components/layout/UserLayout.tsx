@@ -1,16 +1,23 @@
-import { ReactNode } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export default function UserLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const isDashboard = location.pathname === '/';
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <div className="bg-background text-on-surface flex min-h-screen font-body">
       {/* SideNavBar */}
       <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-screen p-4 gap-2 bg-slate-50 dark:bg-slate-900 w-64 shrink-0 border-r border-outline-variant/10 z-40">
         <div className="px-4 py-6 mb-4">
-          <h1 className="text-lg font-bold text-sky-600 font-headline">Fluid Concierge</h1>
+          <h1 className="text-lg font-bold text-sky-600 font-headline">TripPlanner</h1>
           <p className="text-xs text-on-surface-variant">Premium Trip Planning</p>
         </div>
         <nav className="flex-1 space-y-2">
@@ -91,7 +98,7 @@ export default function UserLayout() {
                 Plan New
               </NavLink>
             </div>
-            {!isDashboard && <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-headline lg:hidden">Fluid Concierge</span>}
+            {!isDashboard && <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-headline lg:hidden">TripPlanner</span>}
           </div>
           <div className="flex items-center gap-4">
             <button className="p-2 text-slate-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg transition-all">
@@ -100,12 +107,18 @@ export default function UserLayout() {
             <button className="p-2 text-slate-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg transition-all">
               <span className="material-symbols-outlined">settings</span>
             </button>
-            <div className="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden ml-2 border border-outline-variant/20">
-              <img
-                alt="User profile avatar"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0HD1G5HGz0HGXmJfrmUwtZKUEUBfVvkAMwKq4XuN0-meLc2UjnUXW4DDKKRKfCt4WX-stsIgdstQ-Sg6NmhgNDqalM75Jc5PMAFl8d_00pi6jFOxLZrlg2jCU3J6tAM4B4Riqa8IUVL8te_YkvECoMcnJvur6fhFdfPITG4BYx7-NryPSIEanjDalP2jCIr0DDeuTJWPrYmaFV689xjljtMc6dEbdBr-R1FZZe3pM7jpSBQ8NQnwCTJsfGJ31myoyGtvyU7YpKJc"
-                className="w-full h-full object-cover"
-              />
+            <div className="flex items-center gap-3 ml-2 pl-4 border-l border-outline-variant/10">
+              <div className="text-right hidden sm:block">
+                <p className="text-sm font-bold text-slate-900 dark:text-white leading-tight">{user?.name || 'User'}</p>
+                <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">{user?.role || 'Guest'}</p>
+              </div>
+              <button 
+                onClick={handleLogout}
+                className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-red-500 hover:bg-red-500/10 transition-all active:scale-95"
+                title="Logout"
+              >
+                <span className="material-symbols-outlined">logout</span>
+              </button>
             </div>
           </div>
         </header>

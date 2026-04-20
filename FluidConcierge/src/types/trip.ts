@@ -80,3 +80,24 @@ export interface RegenerateRequest {
   feedback?: string;
   promptVersion?: string;
 }
+
+export interface ActivityRequest {
+  name: string;
+  description?: string;
+  location?: string;
+  startTime: string; // "HH:mm:ss"
+  endTime: string;
+  cost: number;
+  activityOrder: number;
+}
+
+export interface ActivityUpdateRequest {
+  name?: string;
+  description?: string;
+  location?: string;
+  startTime?: string;
+  endTime?: string;
+  cost?: number;
+  activityOrder?: number;
+}
+

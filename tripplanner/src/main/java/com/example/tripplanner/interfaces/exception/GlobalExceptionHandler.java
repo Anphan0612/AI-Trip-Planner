@@ -52,6 +52,19 @@ public class GlobalExceptionHandler {
         ));
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> handleRuntime(RuntimeException ex,
+                                                              HttpServletRequest request) {
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        if (ex.getMessage().contains("already exists") || ex.getMessage().contains("Invalid email or password")) {
+            status = HttpStatus.BAD_REQUEST;
+        }
+        
+        return ResponseEntity.status(status).body(errorBody(
+                status, ex.getMessage(), request.getRequestURI()
+        ));
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGeneric(Exception ex,
                                                               HttpServletRequest request) {

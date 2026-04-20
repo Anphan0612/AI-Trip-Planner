@@ -6,37 +6,43 @@ import com.example.tripplanner.domain.port.AiLogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
+@Repository
 @RequiredArgsConstructor
 public class AiLogRepositoryImpl implements AiLogRepository {
 
     private final JpaAiLogRepository jpaRepository;
+    private final PersistenceMapper mapper;
 
     @Override
     public AiLog save(AiLog aiLog) {
-        return jpaRepository.save(aiLog);
+        AiLogEntity entity = mapper.toEntity(aiLog);
+        AiLogEntity savedEntity = jpaRepository.save(entity);
+        return mapper.toDomain(savedEntity);
     }
 
     @Override
     public Optional<AiLog> findById(Long id) {
-        return jpaRepository.findById(id);
+        return jpaRepository.findById(id)
+                .map(mapper::toDomain);
     }
 
     @Override
     public Page<AiLog> findByTripId(String tripId, Pageable pageable) {
-        return jpaRepository.findByTripId(tripId, pageable);
+        return jpaRepository.findByTripId(tripId, pageable)
+                .map(mapper::toDomain);
     }
 
     @Override
     public Page<AiLog> findByTripIdAndStatus(String tripId, AiLogStatus status, Pageable pageable) {
-        return jpaRepository.findByTripIdAndStatus(tripId, status, pageable);
+        return jpaRepository.findByTripIdAndStatus(tripId, status, pageable)
+                .map(mapper::toDomain);
     }
 
     @Override
@@ -69,7 +75,7 @@ public class AiLogRepositoryImpl implements AiLogRepository {
         List<Object[]> results = jpaRepository.countByValidationType();
         Map<String, Long> map = new HashMap<>();
         for (Object[] result : results) {
-            String type = (String) result[0];
+            String type = result[0].toString();
             Long count = ((Number) result[1]).longValue();
             map.put(type, count);
         }

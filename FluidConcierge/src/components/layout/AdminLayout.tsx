@@ -1,6 +1,16 @@
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export default function AdminLayout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <div className="bg-[#101415] text-on-surface flex min-h-screen font-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
       {/* Admin Sidebar */}
@@ -11,7 +21,7 @@ export default function AdminLayout() {
               <span className="material-symbols-outlined text-on-primary-container" style={{ fontVariationSettings: "'FILL' 1" }}>fluid</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight text-white">Concierge AI</h1>
+              <h1 className="text-xl font-bold tracking-tight text-white">TripPlanner</h1>
               <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Admin Terminal</p>
             </div>
           </div>
@@ -101,12 +111,18 @@ export default function AdminLayout() {
             <button className="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold text-sm active:scale-95 transition-transform">
               New Itinerary
             </button>
-            <div className="w-8 h-8 rounded-full bg-slate-800 overflow-hidden ml-2">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCpqmpH3yd1dgD9BJN_Sy3Pi68cSWEB_ykUnlCrxL-JQgbAoUEbEg5czZAUbo76Q5q9ENEuqH-IkCBlXuk_Qt2VfvpngCOA9-KNwCT1ok_UARf0_Xr5Mkn9veEMS7-wbuXVrnvrP2g7ZKV-uD-8jJCZbYqn31gS6K3nIcdcX2Wb8JqclYg6MZBY18hExCrXSx5l0uadMI5Dpz6XMMCNWRqxxtqhU8S1irP3qmLKZ9CS45dTv38zDTy1aYEjzGITrB3uIR68loJUbw" 
-                className="w-full h-full object-cover"
-                alt="Admin Avatar"
-              />
+            <div className="flex items-center gap-3 ml-2 pl-4 border-l border-slate-800">
+               <div className="text-right hidden sm:block">
+                <p className="text-sm font-bold text-white leading-tight">{user?.name || 'Admin'}</p>
+                <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">{user?.role || 'Full Access'}</p>
+              </div>
+              <button 
+                onClick={handleLogout}
+                className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-slate-500 hover:text-red-500 hover:bg-red-500/10 transition-all active:scale-95 border border-slate-800"
+                title="Logout"
+              >
+                <span className="material-symbols-outlined">logout</span>
+              </button>
             </div>
           </div>
         </header>

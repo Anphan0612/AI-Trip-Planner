@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { tripApi, itineraryApi } from '../services/api';
+import { tripApi, itineraryApi, activityApi } from '../services/api';
 import type { TripResponse, ItineraryResponse, ActivityResponse } from '../types/trip';
+import EditActivityModal from '../components/EditActivityModal';
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; label: string }> = {
   default:    { bg: 'bg-primary-fixed',   text: 'text-on-primary-fixed',   label: 'Hoạt động' },
@@ -34,7 +35,11 @@ function calcTotalCost(itineraries: ItineraryResponse[]): number {
 
 // ── Sub-components ─────────────────────────────────────────────────────────
 
-function ActivityCard({ activity }: { activity: ActivityResponse }) {
+function ActivityCard({ activity, onEdit, onDelete }: {
+  activity: ActivityResponse;
+  onEdit: (activity: ActivityResponse) => void;
+  onDelete: (activityId: string) => void;
+}) {
   const style = CATEGORY_STYLES.default;
   return (
     <div className="relative group">
@@ -67,11 +72,36 @@ function ActivityCard({ activity }: { activity: ActivityResponse }) {
           </div>
         </div>
       </div>
+
+      {/* Action buttons (show on hover) */}
+      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+        <button
+          onClick={() => onEdit(activity)}
+          className="p-2 bg-primary text-white rounded-lg hover:scale-105 transition-all shadow-md"
+          title="Chỉnh sửa"
+        >
+          <span className="material-symbols-outlined text-sm">edit</span>
+        </button>
+        <button
+          onClick={() => onDelete(activity.id)}
+          className="p-2 bg-error text-white rounded-lg hover:scale-105 transition-all shadow-md"
+          title="Xóa"
+        >
+          <span className="material-symbols-outlined text-sm">delete</span>
+        </button>
+      </div>
     </div>
   );
 }
 
-function DaySection({ itinerary, isFirst }: { itinerary: ItineraryResponse; isFirst: boolean }) {
+function DaySection({ itinerary, isFirst, onAddActivity, onRegenerateDay, onEditActivity, onDeleteActivity }: {
+  itinerary: ItineraryResponse;
+  isFirst: boolean;
+  onAddActivity: (itineraryId: string) => void;
+  onRegenerateDay: (itineraryId: string) => void;
+  onEditActivity: (activity: ActivityResponse) => void;
+  onDeleteActivity: (activityId: string, itineraryId: string) => void;
+}) {
   const [expanded, setExpanded] = useState(isFirst);
   const dayTotal = itinerary.activities.reduce((s, a) => s + (a.cost || 0), 0);
 
@@ -105,15 +135,41 @@ function DaySection({ itinerary, isFirst }: { itinerary: ItineraryResponse; isFi
       </button>
 
       {expanded && (
-        <div className="relative pl-6 space-y-10 mt-8 before:content-[''] before:absolute before:left-[1.375rem] before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
-          {itinerary.activities.length === 0 ? (
-            <p className="text-sm text-on-surface-variant italic">Chưa có hoạt động nào được lên kế hoạch.</p>
-          ) : (
-            [...itinerary.activities]
-              .sort((a, b) => (a.activityOrder ?? 0) - (b.activityOrder ?? 0))
-              .map(activity => <ActivityCard key={activity.id} activity={activity} />)
-          )}
-        </div>
+        <>
+          <div className="relative pl-6 space-y-10 mt-8 before:content-[''] before:absolute before:left-[1.375rem] before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+            {itinerary.activities.length === 0 ? (
+              <p className="text-sm text-on-surface-variant italic">Chưa có hoạt động nào được lên kế hoạch.</p>
+            ) : (
+              [...itinerary.activities]
+                .sort((a, b) => (a.activityOrder ?? 0) - (b.activityOrder ?? 0))
+                .map(activity => (
+                  <ActivityCard
+                    key={activity.id}
+                    activity={activity}
+                    onEdit={onEditActivity}
+                    onDelete={(activityId) => onDeleteActivity(activityId, itinerary.id)}
+                  />
+                ))
+            )}
+          </div>
+
+          <div className="flex gap-3 mt-6">
+            <button
+              onClick={() => onAddActivity(itinerary.id)}
+              className="flex-1 py-3 border-2 border-dashed border-primary/30 rounded-xl text-primary font-semibold hover:bg-primary/5 transition-all flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined">add</span>
+              Thêm hoạt động
+            </button>
+            <button
+              onClick={() => onRegenerateDay(itinerary.id)}
+              className="px-6 py-3 bg-secondary text-white rounded-xl font-semibold hover:scale-105 transition-all flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined">refresh</span>
+              Tạo lại ngày này
+            </button>
+          </div>
+        </>
       )}
     </section>
   );
@@ -179,6 +235,11 @@ export default function Itinerary() {
   const [isRegenerating, setIsRegenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Edit modal state
+  const [editingActivity, setEditingActivity] = useState<ActivityResponse | null>(null);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [currentItineraryId, setCurrentItineraryId] = useState<string | null>(null);
+
   useEffect(() => {
     if (!tripId) return;
     let interval: ReturnType<typeof setInterval>;
@@ -226,6 +287,47 @@ export default function Itinerary() {
       setError('Không thể tạo lại lịch trình.');
     } finally {
       setIsRegenerating(false);
+    }
+  };
+
+  const handleEditActivity = (activity: ActivityResponse) => {
+    setEditingActivity(activity);
+    setIsEditModalOpen(true);
+  };
+
+  const handleAddActivity = (itineraryId: string) => {
+    setCurrentItineraryId(itineraryId);
+    setEditingActivity(null);
+    setIsEditModalOpen(true);
+  };
+
+  const handleDeleteActivity = async (activityId: string, itineraryId: string) => {
+    if (!confirm('Bạn có chắc muốn xóa hoạt động này?')) return;
+    try {
+      await activityApi.delete(itineraryId, activityId);
+      const freshItineraries = await itineraryApi.getByTrip(tripId!);
+      setItineraries(freshItineraries);
+    } catch {
+      setError('Không thể xóa hoạt động.');
+    }
+  };
+
+  const handleSaveActivity = async () => {
+    if (!tripId) return;
+    const freshItineraries = await itineraryApi.getByTrip(tripId);
+    setItineraries(freshItineraries);
+    setIsEditModalOpen(false);
+  };
+
+  const handleRegenerateDay = async (itineraryId: string) => {
+    if (!confirm('Tạo lại ngày này? Các hoạt động hiện tại sẽ bị thay thế.')) return;
+    if (!tripId) return;
+    try {
+      await itineraryApi.regenerateDay(tripId, itineraryId);
+      const freshItineraries = await itineraryApi.getByTrip(tripId);
+      setItineraries(freshItineraries);
+    } catch {
+      setError('Không thể tạo lại ngày này.');
     }
   };
 
@@ -313,7 +415,15 @@ export default function Itinerary() {
             </div>
           ) : (
             sortedItineraries.map((itinerary, idx) => (
-              <DaySection key={itinerary.id} itinerary={itinerary} isFirst={idx === 0} />
+              <DaySection
+                key={itinerary.id}
+                itinerary={itinerary}
+                isFirst={idx === 0}
+                onAddActivity={handleAddActivity}
+                onRegenerateDay={handleRegenerateDay}
+                onEditActivity={handleEditActivity}
+                onDeleteActivity={handleDeleteActivity}
+              />
             ))
           )}
         </div>
@@ -373,6 +483,15 @@ export default function Itinerary() {
           </div>
         </div>
       </div>
+
+      {/* Edit Activity Modal */}
+      <EditActivityModal
+        activity={editingActivity}
+        itineraryId={currentItineraryId || ''}
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        onSave={handleSaveActivity}
+      />
     </div>
   );
 }

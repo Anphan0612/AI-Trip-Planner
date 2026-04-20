@@ -6,29 +6,43 @@ import PlanTrip from './pages/PlanTrip';
 import Itinerary from './pages/Itinerary';
 import Places from './pages/admin/Places';
 import Users from './pages/admin/Users';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* User Routes */}
-        <Route element={<UserLayout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/plan" element={<PlanTrip />} />
-          <Route path="/itinerary/:id" element={<Itinerary />} />
-        </Route>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-        {/* Admin Routes */}
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Navigate to="places" replace />} />
-          <Route path="places" element={<Places />} />
-          <Route path="users" element={<Users />} />
-        </Route>
+          {/* Protected User Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<UserLayout />}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/plan" element={<PlanTrip />} />
+              <Route path="/itinerary/:id" element={<Itinerary />} />
+            </Route>
+          </Route>
 
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+          {/* Protected Admin Routes */}
+          <Route element={<ProtectedRoute adminOnly />}>
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<Navigate to="places" replace />} />
+              <Route path="places" element={<Places />} />
+              <Route path="users" element={<Users />} />
+            </Route>
+          </Route>
+
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
