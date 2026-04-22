@@ -1,0 +1,32 @@
+POST http://localhost:8081/trip/generate
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "destination": "",
+  "days": 0
+}
+
+<> 2026-04-07T222719-1.500.json
+
+###
+
+POST http://localhost:8081/trip/generate
+Content-Type: application/json
+Content-Length: 42
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "destination": "Da Lat",
+  "days": 3
+}
+
+<> 2026-04-07T222719.500.json
+
+###
+

@@ -67,5 +67,3 @@ Current implementation is approximately **95% complete** for core features.
 See [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for detailed progress and technical notes.
 
 ---
-
-Developed by **Nhom1**
