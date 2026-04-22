@@ -1,0 +1,144 @@
+{
+"info": {
+"name": "AI Trip Planner - Phase 3 Testing",
+"_postman_id": "ai-trip-planner-phase3",
+"description": "Test AI Orchestrator with validation, retry, and analytics",
+"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+},
+"variable": [
+{
+"key": "base_url",
+"value": "http://localhost:8080/api"
+}
+],
+"item": [
+{
+"name": "1. Happy Path (Easy Case)",
+"request": {
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "application/json"
+}
+],
+"url": {
+"raw": "{{base_url}}/trip/generate",
+"host": ["{{base_url}}"],
+"path": ["trip", "generate"]
+},
+"body": {
+"mode": "raw",
+"raw": "{\n  \"location\": \"Da Nang\",\n  \"days\": 2,\n  \"budget\": 200\n}"
+}
+}
+},
+{
+"name": "2. Medium Case (Business Validation Fail)",
+"request": {
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "application/json"
+}
+],
+"url": {
+"raw": "{{base_url}}/trip/generate",
+"host": ["{{base_url}}"],
+"path": ["trip", "generate"]
+},
+"body": {
+"mode": "raw",
+"raw": "{\n  \"location\": \"Da Nang\",\n  \"days\": 0,\n  \"budget\": -100\n}"
+}
+}
+},
+{
+"name": "3. Hard Case (Format/Schema Fail)",
+"request": {
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "application/json"
+}
+],
+"url": {
+"raw": "{{base_url}}/trip/generate",
+"host": ["{{base_url}}"],
+"path": ["trip", "generate"]
+},
+"body": {
+"mode": "raw",
+"raw": "{\n  \"location\": \"???\",\n  \"days\": 10,\n  \"budget\": 1\n}"
+}
+}
+},
+{
+"name": "4. Stress Test (Run Multiple Times)",
+"request": {
+"method": "POST",
+"header": [
+{
+"key": "Content-Type",
+"value": "application/json"
+}
+],
+"url": {
+"raw": "{{base_url}}/trip/generate",
+"host": ["{{base_url}}"],
+"path": ["trip", "generate"]
+},
+"body": {
+"mode": "raw",
+"raw": "{\n  \"location\": \"Ho Chi Minh\",\n  \"days\": 3,\n  \"budget\": 300\n}"
+}
+}
+},
+{
+"name": "5. Get Success Rate",
+"request": {
+"method": "GET",
+"url": {
+"raw": "{{base_url}}/analytics/success-rate",
+"host": ["{{base_url}}"],
+"path": ["analytics", "success-rate"]
+}
+}
+},
+{
+"name": "6. Get Average Token Usage",
+"request": {
+"method": "GET",
+"url": {
+"raw": "{{base_url}}/analytics/avg-tokens",
+"host": ["{{base_url}}"],
+"path": ["analytics", "avg-tokens"]
+}
+}
+},
+{
+"name": "7. Get Retry Stats",
+"request": {
+"method": "GET",
+"url": {
+"raw": "{{base_url}}/analytics/retry-stats",
+"host": ["{{base_url}}"],
+"path": ["analytics", "retry-stats"]
+}
+}
+},
+{
+"name": "8. Get Validation Error Distribution",
+"request": {
+"method": "GET",
+"url": {
+"raw": "{{base_url}}/analytics/error-distribution",
+"host": ["{{base_url}}"],
+"path": ["analytics", "error-distribution"]
+}
+}
+}
+]
+}

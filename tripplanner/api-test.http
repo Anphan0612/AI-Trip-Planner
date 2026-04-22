@@ -1,0 +1,17 @@
+### Test Happy Path: Generate AI Trip Plan
+POST http://localhost:8081/trip/generate
+Content-Type: application/json
+
+{
+  "destination": "Da Lat",
+  "days": 3
+}
+
+### Test with missing data (Optional)
+POST http://localhost:8081/trip/generate
+Content-Type: application/json
+
+{
+  "destination": "",
+  "days": 0
+}
