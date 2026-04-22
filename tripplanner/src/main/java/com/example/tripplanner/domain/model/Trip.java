@@ -25,4 +25,7 @@ public class Trip {
     
     @Builder.Default
     private List<Itinerary> itineraries = new ArrayList<>();
+
+    @Builder.Default
+    private List<Recommendation> recommendations = new ArrayList<>();
 }

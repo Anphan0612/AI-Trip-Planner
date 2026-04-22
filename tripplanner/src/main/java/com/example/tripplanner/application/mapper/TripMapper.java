@@ -2,9 +2,11 @@ package com.example.tripplanner.application.mapper;
 
 import com.example.tripplanner.application.dto.ActivityResponse;
 import com.example.tripplanner.application.dto.ItineraryResponse;
+import com.example.tripplanner.application.dto.RecommendationResponse;
 import com.example.tripplanner.application.dto.TripResponse;
 import com.example.tripplanner.domain.model.Activity;
 import com.example.tripplanner.domain.model.Itinerary;
+import com.example.tripplanner.domain.model.Recommendation;
 import com.example.tripplanner.domain.model.Trip;
 
 import java.util.List;
@@ -24,6 +26,9 @@ public final class TripMapper {
                 .budget(trip.getBudget())
                 .status(trip.getStatus())
                 .createdAt(trip.getCreatedAt())
+                .recommendations(trip.getRecommendations().stream()
+                        .map(TripMapper::toRecommendationResponse)
+                        .toList())
                 .build();
     }
 
@@ -53,6 +58,17 @@ public final class TripMapper {
                 .endTime(activity.getEndTime())
                 .cost(activity.getCost())
                 .activityOrder(activity.getActivityOrder())
+                .build();
+    }
+
+    public static RecommendationResponse toRecommendationResponse(Recommendation recommendation) {
+        return RecommendationResponse.builder()
+                .id(recommendation.getId())
+                .name(recommendation.getName())
+                .type(recommendation.getType())
+                .description(recommendation.getDescription())
+                .location(recommendation.getLocation())
+                .priceLevel(recommendation.getPriceLevel())
                 .build();
     }
 }
