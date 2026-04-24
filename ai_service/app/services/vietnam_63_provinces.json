@@ -1,0 +1,3878 @@
+{
+    "An Giang": {
+        "name": "An Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử An Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng An Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm An Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm An Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản An Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương An Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp An Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh An Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm An Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay An Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bà Rịa - Vũng Tàu": {
+        "name": "Bà Rịa - Vũng Tàu",
+        "places": [
+            {
+                "name": "Bãi Sau Vũng Tàu",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Tượng Chúa Dang Tay",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Ngọn Hải Đăng Vũng Tàu",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Hồ Tràm",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Hải sản Gành Hào - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Bánh Khọt Gốc Vú Sữa - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Lẩu Cá Mát Vũng Tàu - Rating: 4.4/5",
+                "type": "dinner",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "The Imperial Hotel Vũng Tàu",
+                "price_level": "high"
+            },
+            {
+                "name": "Pullman Vũng Tàu",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Bắc Giang": {
+        "name": "Bắc Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bắc Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bắc Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bắc Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bắc Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bắc Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bắc Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bắc Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bắc Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bắc Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bắc Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bắc Kạn": {
+        "name": "Bắc Kạn",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bắc Kạn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bắc Kạn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bắc Kạn",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bắc Kạn",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bắc Kạn - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bắc Kạn - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bắc Kạn - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bắc Kạn",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bắc Kạn",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bắc Kạn bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bạc Liêu": {
+        "name": "Bạc Liêu",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bạc Liêu",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bạc Liêu",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bạc Liêu",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bạc Liêu",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bạc Liêu - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bạc Liêu - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bạc Liêu - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bạc Liêu",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bạc Liêu",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bạc Liêu bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bắc Ninh": {
+        "name": "Bắc Ninh",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bắc Ninh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bắc Ninh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bắc Ninh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bắc Ninh",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bắc Ninh - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bắc Ninh - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bắc Ninh - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bắc Ninh",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bắc Ninh",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bắc Ninh bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bến Tre": {
+        "name": "Bến Tre",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bến Tre",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bến Tre",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bến Tre",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bến Tre",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bến Tre - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bến Tre - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bến Tre - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bến Tre",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bến Tre",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bến Tre bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bình Định": {
+        "name": "Bình Định",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bình Định",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bình Định",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bình Định",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bình Định",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bình Định - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bình Định - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bình Định - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bình Định",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bình Định",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bình Định bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bình Dương": {
+        "name": "Bình Dương",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bình Dương",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bình Dương",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bình Dương",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bình Dương",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bình Dương - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bình Dương - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bình Dương - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bình Dương",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bình Dương",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bình Dương bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bình Phước": {
+        "name": "Bình Phước",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bình Phước",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bình Phước",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bình Phước",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bình Phước",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bình Phước - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bình Phước - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bình Phước - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bình Phước",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bình Phước",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bình Phước bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Bình Thuận": {
+        "name": "Bình Thuận",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Bình Thuận",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Bình Thuận",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Bình Thuận",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Bình Thuận",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Bình Thuận - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Bình Thuận - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Bình Thuận - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Bình Thuận",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Bình Thuận",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Bình Thuận bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Cà Mau": {
+        "name": "Cà Mau",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Cà Mau",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Cà Mau",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Cà Mau",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Cà Mau",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Cà Mau - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Cà Mau - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Cà Mau - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Cà Mau",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Cà Mau",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Cà Mau bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Cao Bằng": {
+        "name": "Cao Bằng",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Cao Bằng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Cao Bằng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Cao Bằng",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Cao Bằng",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Cao Bằng - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Cao Bằng - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Cao Bằng - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Cao Bằng",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Cao Bằng",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Cao Bằng bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đắk Lắk": {
+        "name": "Đắk Lắk",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Đắk Lắk",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Đắk Lắk",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Đắk Lắk",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Đắk Lắk",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Đắk Lắk - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Đắk Lắk - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Đắk Lắk - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Đắk Lắk",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Đắk Lắk",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Đắk Lắk bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đắk Nông": {
+        "name": "Đắk Nông",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Đắk Nông",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Đắk Nông",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Đắk Nông",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Đắk Nông",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Đắk Nông - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Đắk Nông - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Đắk Nông - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Đắk Nông",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Đắk Nông",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Đắk Nông bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Điện Biên": {
+        "name": "Điện Biên",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Điện Biên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Điện Biên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Điện Biên",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Điện Biên",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Điện Biên - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Điện Biên - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Điện Biên - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Điện Biên",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Điện Biên",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Điện Biên bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đồng Nai": {
+        "name": "Đồng Nai",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Đồng Nai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Đồng Nai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Đồng Nai",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Đồng Nai",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Đồng Nai - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Đồng Nai - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Đồng Nai - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Đồng Nai",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Đồng Nai",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Đồng Nai bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đồng Tháp": {
+        "name": "Đồng Tháp",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Đồng Tháp",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Đồng Tháp",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Đồng Tháp",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Đồng Tháp",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Đồng Tháp - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Đồng Tháp - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Đồng Tháp - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Đồng Tháp",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Đồng Tháp",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Đồng Tháp bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Gia Lai": {
+        "name": "Gia Lai",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Gia Lai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Gia Lai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Gia Lai",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Gia Lai",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Gia Lai - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Gia Lai - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Gia Lai - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Gia Lai",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Gia Lai",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Gia Lai bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hà Giang": {
+        "name": "Hà Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hà Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hà Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hà Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hà Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hà Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hà Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hà Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hà Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hà Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hà Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hà Nam": {
+        "name": "Hà Nam",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hà Nam",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hà Nam",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hà Nam",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hà Nam",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hà Nam - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hà Nam - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hà Nam - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hà Nam",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hà Nam",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hà Nam bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hà Nội": {
+        "name": "Hà Nội",
+        "places": [
+            {
+                "name": "Hồ Hoàn Kiếm & Đền Ngọc Sơn",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Lăng Chủ tịch Hồ Chí Minh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Khu Phố Cổ Hà Nội",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Văn Miếu - Quốc Tử Giám",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Phố đi bộ Tạ Hiện",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Phở Gia Truyền Bát Đàn - Rating: 4.6/5",
+                "type": "breakfast",
+                "vibe": "chill"
+            },
+            {
+                "name": "Bún Chả Hương Liên (Obama) - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chả Cá Lã Vọng - Rating: 4.2/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Maison Sen Buffet - Rating: 4.7/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Sofitel Legend Metropole Hanoi",
+                "price_level": "high"
+            },
+            {
+                "name": "Hanoi La Siesta Hotel & Spa",
+                "price_level": "medium"
+            },
+            {
+                "name": "Little Charm Hanoi Hostel",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hà Tĩnh": {
+        "name": "Hà Tĩnh",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hà Tĩnh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hà Tĩnh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hà Tĩnh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hà Tĩnh",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hà Tĩnh - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hà Tĩnh - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hà Tĩnh - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hà Tĩnh",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hà Tĩnh",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hà Tĩnh bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hải Dương": {
+        "name": "Hải Dương",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hải Dương",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hải Dương",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hải Dương",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hải Dương",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hải Dương - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hải Dương - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hải Dương - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hải Dương",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hải Dương",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hải Dương bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hải Phòng": {
+        "name": "Hải Phòng",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hải Phòng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hải Phòng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hải Phòng",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hải Phòng",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hải Phòng - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hải Phòng - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hải Phòng - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hải Phòng",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hải Phòng",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hải Phòng bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hậu Giang": {
+        "name": "Hậu Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hậu Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hậu Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hậu Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hậu Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hậu Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hậu Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hậu Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hậu Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hậu Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hậu Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hòa Bình": {
+        "name": "Hòa Bình",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hòa Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hòa Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hòa Bình",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hòa Bình",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hòa Bình - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hòa Bình - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hòa Bình - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hòa Bình",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hòa Bình",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hòa Bình bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hưng Yên": {
+        "name": "Hưng Yên",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Hưng Yên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Hưng Yên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Hưng Yên",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Hưng Yên",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Hưng Yên - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Hưng Yên - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Hưng Yên - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Hưng Yên",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Hưng Yên",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Hưng Yên bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Khánh Hòa": {
+        "name": "Khánh Hòa",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Khánh Hòa",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Khánh Hòa",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Khánh Hòa",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Khánh Hòa",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Khánh Hòa - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Khánh Hòa - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Khánh Hòa - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Khánh Hòa",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Khánh Hòa",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Khánh Hòa bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Kiên Giang": {
+        "name": "Kiên Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Kiên Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Kiên Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Kiên Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Kiên Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Kiên Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Kiên Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Kiên Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Kiên Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Kiên Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Kiên Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Kon Tum": {
+        "name": "Kon Tum",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Kon Tum",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Kon Tum",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Kon Tum",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Kon Tum",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Kon Tum - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Kon Tum - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Kon Tum - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Kon Tum",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Kon Tum",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Kon Tum bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Lai Châu": {
+        "name": "Lai Châu",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Lai Châu",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Lai Châu",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Lai Châu",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Lai Châu",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Lai Châu - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Lai Châu - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Lai Châu - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Lai Châu",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Lai Châu",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Lai Châu bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Lâm Đồng": {
+        "name": "Lâm Đồng",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Lâm Đồng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Lâm Đồng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Lâm Đồng",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Lâm Đồng",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Lâm Đồng - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Lâm Đồng - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Lâm Đồng - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Lâm Đồng",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Lâm Đồng",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Lâm Đồng bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Lạng Sơn": {
+        "name": "Lạng Sơn",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Lạng Sơn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Lạng Sơn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Lạng Sơn",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Lạng Sơn",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Lạng Sơn - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Lạng Sơn - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Lạng Sơn - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Lạng Sơn",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Lạng Sơn",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Lạng Sơn bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Lào Cai": {
+        "name": "Lào Cai",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Lào Cai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Lào Cai",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Lào Cai",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Lào Cai",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Lào Cai - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Lào Cai - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Lào Cai - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Lào Cai",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Lào Cai",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Lào Cai bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Long An": {
+        "name": "Long An",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Long An",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Long An",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Long An",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Long An",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Long An - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Long An - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Long An - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Long An",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Long An",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Long An bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Nam Định": {
+        "name": "Nam Định",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Nam Định",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Nam Định",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Nam Định",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Nam Định",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Nam Định - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Nam Định - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Nam Định - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Nam Định",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Nam Định",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Nam Định bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Nghệ An": {
+        "name": "Nghệ An",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Nghệ An",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Nghệ An",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Nghệ An",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Nghệ An",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Nghệ An - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Nghệ An - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Nghệ An - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Nghệ An",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Nghệ An",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Nghệ An bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Ninh Bình": {
+        "name": "Ninh Bình",
+        "places": [
+            {
+                "name": "Quần thể danh thắng Tràng An",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chùa Bái Đính",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Hang Múa",
+                "type": "adventure",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tam Cốc - Bích Động",
+                "type": "sightseeing",
+                "vibe": "chill"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng Chợ Quê Quán - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "chill"
+            },
+            {
+                "name": "Dê núi Chính Thư - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Emeralda Resort Ninh Binh",
+                "price_level": "high"
+            },
+            {
+                "name": "Ninh Binh Hidden Charm",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Ninh Thuận": {
+        "name": "Ninh Thuận",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Ninh Thuận",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Ninh Thuận",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Ninh Thuận",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Ninh Thuận",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Ninh Thuận - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Ninh Thuận - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Ninh Thuận - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Ninh Thuận",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Ninh Thuận",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Ninh Thuận bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Phú Thọ": {
+        "name": "Phú Thọ",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Phú Thọ",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Phú Thọ",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Phú Thọ",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Phú Thọ",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Phú Thọ - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Phú Thọ - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Phú Thọ - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Phú Thọ",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Phú Thọ",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Phú Thọ bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Phú Yên": {
+        "name": "Phú Yên",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Phú Yên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Phú Yên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Phú Yên",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Phú Yên",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Phú Yên - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Phú Yên - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Phú Yên - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Phú Yên",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Phú Yên",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Phú Yên bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Quảng Bình": {
+        "name": "Quảng Bình",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Quảng Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Quảng Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Quảng Bình",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Quảng Bình",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Quảng Bình - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Quảng Bình - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Quảng Bình - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Quảng Bình",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Quảng Bình",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Quảng Bình bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Quảng Nam": {
+        "name": "Quảng Nam",
+        "places": [
+            {
+                "name": "Phố cổ Hội An",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "VinWonders Nam Hội An",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Cù Lao Chàm",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Rừng dừa Bảy Mẫu",
+                "type": "adventure",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Bánh mì Phượng - Rating: 4.6/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Cơm gà Bà Buội - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Morning Glory Original - Rating: 4.7/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Four Seasons Resort The Nam Hai",
+                "price_level": "high"
+            },
+            {
+                "name": "Anantara Hoi An Resort",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Quảng Ngãi": {
+        "name": "Quảng Ngãi",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Quảng Ngãi",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Quảng Ngãi",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Quảng Ngãi",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Quảng Ngãi",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Quảng Ngãi - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Quảng Ngãi - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Quảng Ngãi - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Quảng Ngãi",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Quảng Ngãi",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Quảng Ngãi bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Quảng Ninh": {
+        "name": "Quảng Ninh",
+        "places": [
+            {
+                "name": "Vịnh Hạ Long",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Sun World Hạ Long Complex",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Quảng Ninh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Đảo Tuần Châu",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà Hàng Hồng Hạnh - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Hải Sản Thủy Chung - Rating: 4.4/5",
+                "type": "dinner",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Vinpearl Resort & Spa Hạ Long",
+                "price_level": "high"
+            },
+            {
+                "name": "Wyndham Legend Halong",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Quảng Trị": {
+        "name": "Quảng Trị",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Quảng Trị",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Quảng Trị",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Quảng Trị",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Quảng Trị",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Quảng Trị - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Quảng Trị - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Quảng Trị - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Quảng Trị",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Quảng Trị",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Quảng Trị bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Sóc Trăng": {
+        "name": "Sóc Trăng",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Sóc Trăng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Sóc Trăng",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Sóc Trăng",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Sóc Trăng",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Sóc Trăng - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Sóc Trăng - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Sóc Trăng - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Sóc Trăng",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Sóc Trăng",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Sóc Trăng bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Sơn La": {
+        "name": "Sơn La",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Sơn La",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Sơn La",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Sơn La",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Sơn La",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Sơn La - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Sơn La - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Sơn La - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Sơn La",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Sơn La",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Sơn La bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Tây Ninh": {
+        "name": "Tây Ninh",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Tây Ninh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Tây Ninh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Tây Ninh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Tây Ninh",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Tây Ninh - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Tây Ninh - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Tây Ninh - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Tây Ninh",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Tây Ninh",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Tây Ninh bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Thái Bình": {
+        "name": "Thái Bình",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Thái Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Thái Bình",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Thái Bình",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Thái Bình",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Thái Bình - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Thái Bình - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Thái Bình - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Thái Bình",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Thái Bình",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Thái Bình bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Thái Nguyên": {
+        "name": "Thái Nguyên",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Thái Nguyên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Thái Nguyên",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Thái Nguyên",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Thái Nguyên",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Thái Nguyên - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Thái Nguyên - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Thái Nguyên - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Thái Nguyên",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Thái Nguyên",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Thái Nguyên bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Thanh Hóa": {
+        "name": "Thanh Hóa",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Thanh Hóa",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Thanh Hóa",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Thanh Hóa",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Thanh Hóa",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Thanh Hóa - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Thanh Hóa - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Thanh Hóa - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Thanh Hóa",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Thanh Hóa",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Thanh Hóa bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Thừa Thiên Huế": {
+        "name": "Thừa Thiên Huế",
+        "places": [
+            {
+                "name": "Đại Nội Huế",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Lăng tẩm các vua Nguyễn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chùa Thiên Mụ",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Sông Hương (Nghe ca Huế)",
+                "type": "nightlife",
+                "vibe": "chill"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Bún Bò Huế Mụ Rơi - Rating: 4.5/5",
+                "type": "breakfast",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Không Gian Xưa - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán Bánh Bèo Bà Đỏ - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Azerai La Residence",
+                "price_level": "high"
+            },
+            {
+                "name": "Senna Hue Hotel",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Tiền Giang": {
+        "name": "Tiền Giang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Tiền Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Tiền Giang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Tiền Giang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Tiền Giang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Tiền Giang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Tiền Giang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Tiền Giang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Tiền Giang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Tiền Giang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Tiền Giang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "TP Hồ Chí Minh": {
+        "name": "TP Hồ Chí Minh",
+        "places": [
+            {
+                "name": "Chợ Bến Thành",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Dinh Độc Lập",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Phố đi bộ Nguyễn Huệ",
+                "type": "nightlife",
+                "vibe": "chill"
+            },
+            {
+                "name": "Nhà thờ Đức Bà & Bưu điện Thành phố",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Khu phố Tây Bùi Viện",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Cơm Tấm Ba Ghiền - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Secret Garden Restaurant - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "chill"
+            },
+            {
+                "name": "Noir. Dining in the Dark - Rating: 4.8/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Cục Gạch Quán - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Park Hyatt Saigon",
+                "price_level": "high"
+            },
+            {
+                "name": "Liberty Central Saigon Citypoint",
+                "price_level": "medium"
+            },
+            {
+                "name": "The Hammock Hotel Fine Arts Museum",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Trà Vinh": {
+        "name": "Trà Vinh",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Trà Vinh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Trà Vinh",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Trà Vinh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Trà Vinh",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Trà Vinh - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Trà Vinh - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Trà Vinh - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Trà Vinh",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Trà Vinh",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Trà Vinh bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Tuyên Quang": {
+        "name": "Tuyên Quang",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Tuyên Quang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Tuyên Quang",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Tuyên Quang",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Tuyên Quang",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Tuyên Quang - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Tuyên Quang - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Tuyên Quang - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Tuyên Quang",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Tuyên Quang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Tuyên Quang bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Vĩnh Long": {
+        "name": "Vĩnh Long",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Vĩnh Long",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Vĩnh Long",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Vĩnh Long",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Vĩnh Long",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Vĩnh Long - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Vĩnh Long - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Vĩnh Long - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Vĩnh Long",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Vĩnh Long",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Vĩnh Long bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Vĩnh Phúc": {
+        "name": "Vĩnh Phúc",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Vĩnh Phúc",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Vĩnh Phúc",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Vĩnh Phúc",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Vĩnh Phúc",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Vĩnh Phúc - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Vĩnh Phúc - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Vĩnh Phúc - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Vĩnh Phúc",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Vĩnh Phúc",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Vĩnh Phúc bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Yên Bái": {
+        "name": "Yên Bái",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Yên Bái",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Yên Bái",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Yên Bái",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Yên Bái",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Yên Bái - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Yên Bái - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Yên Bái - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Yên Bái",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Yên Bái",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Yên Bái bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đà Nẵng": {
+        "name": "Đà Nẵng",
+        "places": [
+            {
+                "name": "Sun World Ba Na Hills",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bán đảo Sơn Trà & Chùa Linh Ứng",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Bãi biển Mỹ Khê",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Cầu Rồng (Xem rồng phun lửa)",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Ngũ Hành Sơn",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Mì Quảng Bà Mua - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Hải Sản Năm Đảnh - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "chill"
+            },
+            {
+                "name": "Bếp Cuốn Đà Nẵng - Rating: 4.7/5",
+                "type": "dinner",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Madame Lân - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "InterContinental Danang Sun Peninsula",
+                "price_level": "high"
+            },
+            {
+                "name": "Novotel Danang Premier Han River",
+                "price_level": "medium"
+            },
+            {
+                "name": "Seashore Hotel & Apartment",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Cần Thơ": {
+        "name": "Cần Thơ",
+        "places": [
+            {
+                "name": "Khu di tích lịch sử Cần Thơ",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Cần Thơ",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Công viên trung tâm Cần Thơ",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Chợ đêm Cần Thơ",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà hàng đặc sản Cần Thơ - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Quán ăn địa phương Cần Thơ - Rating: 4.4/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm cà phê view đẹp Cần Thơ - Rating: 4.6/5",
+                "type": "cafe",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Khách sạn Mường Thanh Cần Thơ",
+                "price_level": "high"
+            },
+            {
+                "name": "Khách sạn trung tâm Cần Thơ",
+                "price_level": "medium"
+            },
+            {
+                "name": "Homestay Cần Thơ bình dân",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Đà Lạt": {
+        "name": "Đà Lạt",
+        "places": [
+            {
+                "name": "Hồ Xuân Hương",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Đỉnh Langbiang",
+                "type": "adventure",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Thung Lũng Tình Yêu",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Thác Datanla",
+                "type": "adventure",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chợ Đêm Đà Lạt",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Lẩu Bò Ba Toa (Quán Gỗ) - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "chill"
+            },
+            {
+                "name": "Bánh Căn Lệ - Rating: 4.6/5",
+                "type": "breakfast",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Tiệm Cà Phê Túi Mơ To - Rating: 4.7/5",
+                "type": "cafe",
+                "vibe": "chill"
+            },
+            {
+                "name": "Nhà hàng Memory - Rating: 4.8/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Dalat Palace Heritage",
+                "price_level": "high"
+            },
+            {
+                "name": "Colline Hotel",
+                "price_level": "medium"
+            },
+            {
+                "name": "Lâm Viên Homestay",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Sapa": {
+        "name": "Sapa",
+        "places": [
+            {
+                "name": "Đỉnh Fansipan",
+                "type": "adventure",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bản Cát Cát",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Thung lũng Mường Hoa",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Đèo Ô Quy Hồ",
+                "type": "adventure",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Nhà thờ đá Sapa",
+                "type": "sightseeing",
+                "vibe": "chill"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Thắng Cố A Quỳnh - Rating: 4.4/5",
+                "type": "dinner",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Nhà hàng Hải Lâm - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "chill"
+            },
+            {
+                "name": "Good Morning Vietnam - Rating: 4.7/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel de la Coupole - MGallery",
+                "price_level": "high"
+            },
+            {
+                "name": "Sapa Station Hotel",
+                "price_level": "medium"
+            },
+            {
+                "name": "Mega View Homestay",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Hội An": {
+        "name": "Quảng Nam",
+        "places": [
+            {
+                "name": "Phố cổ Hội An",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "VinWonders Nam Hội An",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Cù Lao Chàm",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Rừng dừa Bảy Mẫu",
+                "type": "adventure",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Bánh mì Phượng - Rating: 4.6/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Cơm gà Bà Buội - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Morning Glory Original - Rating: 4.7/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Four Seasons Resort The Nam Hai",
+                "price_level": "high"
+            },
+            {
+                "name": "Anantara Hoi An Resort",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Hạ Long": {
+        "name": "Quảng Ninh",
+        "places": [
+            {
+                "name": "Vịnh Hạ Long",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Sun World Hạ Long Complex",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bảo tàng Quảng Ninh",
+                "type": "sightseeing",
+                "vibe": "chill"
+            },
+            {
+                "name": "Đảo Tuần Châu",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà Hàng Hồng Hạnh - Rating: 4.6/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            },
+            {
+                "name": "Hải Sản Thủy Chung - Rating: 4.4/5",
+                "type": "dinner",
+                "vibe": "chill"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Vinpearl Resort & Spa Hạ Long",
+                "price_level": "high"
+            },
+            {
+                "name": "Wyndham Legend Halong",
+                "price_level": "medium"
+            }
+        ]
+    },
+    "Phú Quốc": {
+        "name": "Phú Quốc",
+        "places": [
+            {
+                "name": "VinWonders Phú Quốc",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bãi Sao",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Grand World Phú Quốc",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Cáp treo Hòn Thơm",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chợ Đêm Dinh Cậu",
+                "type": "nightlife",
+                "vibe": "khám phá"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nhà Hàng Ra Khơi - Rating: 4.4/5",
+                "type": "dinner",
+                "vibe": "chill"
+            },
+            {
+                "name": "Bún Quậy Kiến Xây - Rating: 4.6/5",
+                "type": "lunch",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Xin Chào Restaurant - Rating: 4.5/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "JW Marriott Phu Quoc Emerald Bay",
+                "price_level": "high"
+            },
+            {
+                "name": "Sunset Beach Resort & Spa",
+                "price_level": "medium"
+            },
+            {
+                "name": "Nadine Phu Quoc Resort",
+                "price_level": "low"
+            }
+        ]
+    },
+    "Nha Trang": {
+        "name": "Nha Trang",
+        "places": [
+            {
+                "name": "VinWonders Nha Trang",
+                "type": "amusement",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Đảo Hòn Mun",
+                "type": "beach",
+                "vibe": "nghỉ dưỡng"
+            },
+            {
+                "name": "Tháp Bà Ponagar",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Viện Hải Dương Học",
+                "type": "sightseeing",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Chợ Đêm Nha Trang",
+                "type": "nightlife",
+                "vibe": "chill"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Hải Sản Mười Đô - Rating: 4.3/5",
+                "type": "dinner",
+                "vibe": "khám phá"
+            },
+            {
+                "name": "Bánh Canh Bà Thừa - Rating: 4.5/5",
+                "type": "lunch",
+                "vibe": "chill"
+            },
+            {
+                "name": "Costa Seafood Restaurant - Rating: 4.8/5",
+                "type": "dinner",
+                "vibe": "sang trọng"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "InterContinental Nha Trang",
+                "price_level": "high"
+            },
+            {
+                "name": "Novotel Nha Trang",
+                "price_level": "medium"
+            },
+            {
+                "name": "Mojzo Inn",
+                "price_level": "low"
+            }
+        ]
+    }
+}
