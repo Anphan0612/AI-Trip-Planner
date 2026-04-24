@@ -4,6 +4,7 @@ from app.services.intent_service import intent_service
 from app.services.classifier_service import classifier_service
 from app.services.confidence_service import confidence_service
 from app.services.llm_service import llm_service
+from app.services.data_service import data_service
 from app.models.schemas import ParseResponse, EntityResponse
 
 logging.basicConfig(level=logging.INFO)
@@ -39,11 +40,17 @@ class ParsePipeline:
         )
         logger.info(f"Confidence Score: {confidence:.2f} | Needs LLM: {needs_llm}")
         
+        # --- DATASET FALLBACK LOGIC ---
+        destination = entities_dict.get("destination")
+        if destination and data_service.get_destination_data(destination):
+            logger.info(f"Destination '{destination}' found in dataset. Bypassing LLM repair.")
+            needs_llm = False
+        
         source = "regex | hybrid"
         
         # 5. Layer 3: LLM Repair (Fallback)
         if needs_llm:
-            entities_dict = llm_service.repair_entities(text, entities_dict, user_profile)
+            entities_dict = await llm_service.repair_entities(text, entities_dict, user_profile)
             source = "hybrid | llm"
             # Even if LLM repairs it, we might keep the confidence score as it was before repair, 
             # or optionally boost it. For now, keep it to show why it fell back.

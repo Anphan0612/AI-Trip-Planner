@@ -47,7 +47,7 @@ class TripPipeline:
         rec_data = recommendation_service.get_recommendations(destination, budget, vibe)
         
         # 4. Generate Itinerary
-        itin_data = itinerary_service.generate_itinerary(
+        itin_data = await itinerary_service.generate_itinerary(
             destination=destination, 
             duration_days=duration_days,
             budget=budget,

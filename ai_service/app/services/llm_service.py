@@ -1,5 +1,12 @@
 import logging
-from typing import Dict, Any
+import json
+import re
+import httpx
+import os
+from typing import Dict, Any, List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
@@ -78,79 +85,180 @@ Return JSON ONLY:
 }}"""
 
     def __init__(self):
-        # Configuration for OpenAI / Groq / OpenRouter
-        self.api_key = "stub-api-key"
-        self.model = "stub-model"
+        # OpenRouter / 9Router Config
+        self.api_key = os.getenv("LLM_API_KEY", "your-api-key-here")
+        self.api_url = os.getenv("LLM_API_URL", "https://openrouter.ai/api/v1/chat/completions")
+        # LLM_MODELS: comma-separated list for cascade fallback
+        # e.g: model1:free,model2:free,model3:free
+        raw_models = os.getenv("LLM_MODELS", "")
+        self.models = [m.strip() for m in raw_models.split(",") if m.strip()]
+        if not self.models:
+            logger.warning("⚠️ No LLM_MODELS configured in .env! LLM calls will use mock fallback.")
 
-    def repair_entities(self, text: str, current_entities: Dict[str, Any], user_profile: Dict[str, Any] = None) -> Dict[str, Any]:
+
+    async def call_llm(self, messages: List[Dict[str, str]], max_retries: int = 2) -> Dict[str, Any]:
         """
-        Stub method to simulate LLM repairing missing or misunderstood entities.
-        In the future, this will call a real LLM API with a prompt containing `text`, `current_entities`, and `user_profile`.
+        Calls the LLM API with model cascade fallback.
+        If a model fails (429 / 5xx), automatically tries the next model in the list.
+        """
+        import asyncio
+        import re as _re
+
+        if self.api_key == "your-api-key-here":
+            logger.warning("No real API key found. Using mock behavior.")
+            return None
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+
+        for model_index, model in enumerate(self.models):
+            logger.info(f"🤖 Trying model [{model_index + 1}/{len(self.models)}]: {model}")
+
+            for attempt in range(1, max_retries + 1):
+                # Note: response_format is NOT used — Ollama models via proxy don't support it
+                # and it causes empty response body (200 OK but blank body)
+                payload = {
+                    "model": model,
+                    "messages": messages,
+                    "temperature": 0.2,
+                    "max_tokens": 500,
+                    "stream": False
+                }
+
+                try:
+                    async with httpx.AsyncClient(timeout=30.0) as client:
+                        response = await client.post(self.api_url, headers=headers, json=payload)
+
+                        if response.status_code == 429:
+                            wait_seconds = 5
+                            try:
+                                body = response.json()
+                                msg = body.get("error", {}).get("message", "")
+                                match = _re.search(r"reset after (\d+)s", msg)
+                                if match:
+                                    wait_seconds = int(match.group(1)) + 1
+                            except Exception:
+                                pass
+
+                            if attempt < max_retries:
+                                logger.warning(f"[429] Model '{model}' rate limited. Retrying in {wait_seconds}s... (attempt {attempt}/{max_retries})")
+                                await asyncio.sleep(wait_seconds)
+                                continue
+                            else:
+                                logger.warning(f"[429] Model '{model}' exhausted retries. Trying next model...")
+                                break
+
+                        if response.status_code >= 500:
+                            logger.warning(f"[{response.status_code}] Model '{model}' server error. Trying next model...")
+                            break
+
+                        if response.status_code != 200:
+                            logger.error(f"LLM API Error [{model}]: {response.status_code} - {response.text}")
+                            break
+
+                        raw_text = response.text
+                        if not raw_text or not raw_text.strip():
+                            logger.error(f"LLM [{model}]: Empty response body (200 OK but blank). Trying next model.")
+                            break
+
+                        try:
+                            data = response.json()
+                        except Exception as parse_err:
+                            logger.error(f"LLM [{model}]: Failed to parse JSON response. raw='{raw_text[:200]}' err={parse_err}")
+                            break
+
+                        choices = data.get("choices", [])
+                        if not choices:
+                            logger.error(f"LLM [{model}]: No choices in response. data={data}")
+                            break
+
+                        content = choices[0].get("message", {}).get("content", "")
+                        if not content:
+                            logger.error(f"LLM [{model}]: Empty content in choices[0].")
+                            break
+
+                        logger.info(f"✅ LLM success with model '{model}' on attempt {attempt}.")
+                        return self._safe_parse(content)
+
+                except Exception as e:
+                    logger.error(f"LLM call error [{model}]: {e}")
+                    break
+
+        logger.error("❌ All models exhausted. Falling back to mock.")
+        return None
+
+    async def repair_entities(self, text: str, current_entities: Dict[str, Any], user_profile: Dict[str, Any] = None) -> Dict[str, Any]:
+        """
+        Use LLM to fill missing or misunderstood entities.
         """
         logger.info(f"LLM Fallback triggered for text: '{text}'")
         
-        # Format the actual prompt that would be sent to the LLM
-        import json
         entities_json = json.dumps(current_entities, ensure_ascii=False, indent=2)
         user_profile_json = json.dumps(user_profile or {}, ensure_ascii=False, indent=2)
         
         messages = [
-        {
-            "role": "system",
-            "content": """You are an AI assistant that completes missing travel information using context.
-
-            STRICT RULES:
-            - Return ONLY valid JSON
-            - Do NOT include explanations
-            - Do NOT override valid user input
-            - Prefer user profile over guessing
-            """
-        },
-        {
-            "role": "user",
-                    "content": f"""
-            User input:
-            {text}
-
-            Current entities:
-            {entities_json}
-
-            User profile:
-            {user_profile_json}
-            """
-        }
+            {
+                "role": "system",
+                "content": "You are an AI travel assistant. Return ONLY valid JSON."
+            },
+            {
+                "role": "user",
+                "content": self.SYSTEM_PROMPT.format(
+                    text=text,
+                    entities_json=entities_json,
+                    user_profile_json=user_profile_json
+                )
+            }
         ]
-        logger.info(f"Generated LLM Prompt:\n{messages}")
+
+        llm_output = await self.call_llm(messages)
         
-        # Mock behavior: simulate the LLM finding something we missed.
-        # In a real scenario, we would parse the JSON response from the LLM here.
-        # giả lập output từ LLM
-        llm_output = {}
+        if not llm_output:
+            # Fallback to previous mock logic if API fails
+            logger.info("Using mock repair logic.")
+            llm_output = {}
+            if not current_entities.get("destination"):
+                llm_output["destination"] = "[LLM Repaired] Điểm đến ẩn"
+            if not current_entities.get("vibe"):
+                llm_output["vibe"] = "[LLM Repaired] Tự do"
 
-        if not current_entities.get("destination"):
-            llm_output["destination"] = "[LLM Repaired] Điểm đến ẩn"
+        repaired = self._merge_entities(current_entities, llm_output)
+        
+        # Post-processing normalization
+        if repaired.get("budget"):
+            repaired["budget"] = self._normalize_budget(repaired["budget"])
+        if repaired.get("duration_days"):
+            repaired["duration_days"] = self._normalize_duration(repaired["duration_days"])
+            
+        return repaired
 
-        if not current_entities.get("vibe"):
-            llm_output["vibe"] = "[LLM Repaired] Tự do"
-
-        repaired = merge_entities(current_entities, llm_output)
-
-    def generate_itinerary(self, destination: str, duration_days: int, budget: int, vibe: str, group_type: str) -> Dict[str, Any]:
+    async def generate_itinerary(self, destination: str, duration_days: int, budget: int, vibe: str, group_type: str) -> Dict[str, Any]:
         """
-        Stub method to simulate LLM generating an itinerary.
+        Use LLM to generate a full travel itinerary.
         """
         logger.info(f"LLM Itinerary Generation triggered for {destination}")
         
-        actual_prompt = self.ITINERARY_SYSTEM_PROMPT.format(
+        prompt = self.ITINERARY_SYSTEM_PROMPT.format(
             destination=destination,
             duration_days=duration_days,
             budget=budget,
             vibe=vibe,
             group_type=group_type
         )
-        logger.info(f"Generated LLM Itinerary Prompt:\n{actual_prompt}")
         
-        # Mock behavior: Generate a static-like response but fitting the new schema
+        messages = [
+            {"role": "system", "content": "You are a travel planner AI. Return ONLY JSON."},
+            {"role": "user", "content": prompt}
+        ]
+
+        llm_output = await self.call_llm(messages)
+        
+        if llm_output and "days" in llm_output:
+            return llm_output
+            
+        # Mock fallback
         days = []
         for d in range(1, duration_days + 1):
             days.append({
@@ -161,10 +269,9 @@ Return JSON ONLY:
                     "Evening: Ăn tối và dạo phố tự do"
                 ]
             })
-            
         return {"days": days}
 
-    def safe_parse(content: str):
+    def _safe_parse(self, content: str) -> Dict[str, Any]:
         try:
             return json.loads(content)
         except:
@@ -176,30 +283,31 @@ Return JSON ONLY:
                     return {}
         return {}
 
-    def merge_entities(original: Dict[str, Any], llm_output: Dict[str, Any]):
+    def _merge_entities(self, original: Dict[str, Any], llm_output: Dict[str, Any]) -> Dict[str, Any]:
         merged = original.copy()
-
         for key, value in llm_output.items():
+            # Only fill if missing OR if current is null
             if not merged.get(key) and value:
-                merged[key] = value  # chỉ fill missing
-
+                merged[key] = value
         return merged
 
-    def normalize_budget(value):
+    def _normalize_budget(self, value):
         if isinstance(value, str):
             v = value.lower().replace(" ", "")
             if "triệu" in v:
-                return int(v.replace("triệu", "")) * 1_000_000
+                try: return int(float(v.replace("triệu", ""))) * 1_000_000
+                except: pass
             if "tr" in v:
-                return int(v.replace("tr", "")) * 1_000_000
+                try: return int(float(v.replace("tr", ""))) * 1_000_000
+                except: pass
         return value
 
-
-    def normalize_duration(value):
+    def _normalize_duration(self, value):
         if isinstance(value, str):
             v = value.lower()
             if "ngày" in v:
-                return int(v.split()[0])
+                try: return int(v.split()[0])
+                except: pass
         return value
 
 llm_service = LLMService()
