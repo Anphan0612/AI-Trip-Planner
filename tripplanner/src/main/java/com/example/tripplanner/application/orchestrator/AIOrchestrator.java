@@ -31,7 +31,8 @@ public class AIOrchestrator {
     public Long orchestrate(Trip trip, GenerateRequest request) {
         String preferences = request != null ? nullToEmpty(request.getPreferences()) : "";
         String promptVersion = request != null ? nullToDefault(request.getPromptVersion()) : DEFAULT_PROMPT_VERSION;
-        String prompt = buildPrompt(trip, preferences);
+        String language = request != null && request.getLanguage() != null ? request.getLanguage() : "Vietnamese";
+        String prompt = buildPrompt(trip, preferences, language);
         return runPipeline(trip, prompt, promptVersion, null);
     }
 
@@ -42,7 +43,8 @@ public class AIOrchestrator {
     public Long orchestrateRegenerate(Trip trip, RegenerateRequest request) {
         String feedback = request != null ? nullToEmpty(request.getFeedback()) : "";
         String promptVersion = request != null ? nullToDefault(request.getPromptVersion()) : DEFAULT_PROMPT_VERSION;
-        String prompt = buildPrompt(trip, feedback);
+        String language = request != null && request.getLanguage() != null ? request.getLanguage() : "Vietnamese";
+        String prompt = buildPrompt(trip, feedback, language);
         return runPipeline(trip, prompt, promptVersion, feedback);
     }
 
@@ -51,9 +53,9 @@ public class AIOrchestrator {
      * @param itinerary The specific day to regenerate
      * @param feedback Optional user feedback
      */
-    public void orchestrateSingleDay(Itinerary itinerary, String feedback) {
+    public void orchestrateSingleDay(Itinerary itinerary, String feedback, String language) {
         Trip trip = itinerary.getTrip();
-        String prompt = buildSingleDayPrompt(trip, itinerary, feedback);
+        String prompt = buildSingleDayPrompt(trip, itinerary, feedback, language);
 
         PipelineState state = new PipelineState(prompt);
 
@@ -118,11 +120,15 @@ public class AIOrchestrator {
     // Prompt builders
     // ─────────────────────────────────────────────────────────────────────────
 
-    private String buildPrompt(Trip trip, String extra) {
+    private String buildPrompt(Trip trip, String extra, String language) {
         int days = (int) (trip.getEndDate().toEpochDay() - trip.getStartDate().toEpochDay()) + 1;
         String base = String.format(
                 "Generate a %d-day travel itinerary for %s from %s to %s. Budget: %s. " +
-                "You MUST return ONLY valid JSON matching this exact schema, with no markdown, no explanation:\n" +
+                "IMPORTANT RULES:\n" +
+                "1. You MUST use REAL, existing names of hotels, resorts, and restaurants (e.g. 'The Cliff Resort & Residences', 'Cay Bang Restaurant').\n" +
+                "2. DO NOT use generic placeholder names like 'Resort', 'Local Eatery', 'Beach', or 'Hotel'.\n" +
+                "3. All output text (summary, name, description) MUST be entirely in %s language. Only keep English for proper nouns if necessary.\n" +
+                "4. You MUST return ONLY valid JSON matching this exact schema, with no markdown, no explanation:\n" +
                 "{\n" +
                 "  \"totalCost\": <number>,\n" +
                 "  \"recommendedHotels\": [ { \"name\": \"\", \"description\": \"\", \"location\": \"\", \"priceLevel\": \"$$\" } ],\n" +
@@ -144,16 +150,19 @@ public class AIOrchestrator {
                 "    }\n" +
                 "  ]\n" +
                 "}",
-                days, trip.getDestination(), trip.getStartDate(), trip.getEndDate(), trip.getBudget()
+                days, trip.getDestination(), trip.getStartDate(), trip.getEndDate(), trip.getBudget(), language
         );
         return !extra.isBlank() ? base + "\nUser context: " + extra : base;
     }
 
-    private String buildSingleDayPrompt(Trip trip, Itinerary itinerary, String feedback) {
+    private String buildSingleDayPrompt(Trip trip, Itinerary itinerary, String feedback, String language) {
         long totalDays = (trip.getEndDate().toEpochDay() - trip.getStartDate().toEpochDay()) + 1;
         String base = String.format(
                 "Generate activities for day %d of a trip to %s on %s. Budget: %s. " +
-                "You MUST return ONLY valid JSON matching this exact schema:\n" +
+                "IMPORTANT RULES:\n" +
+                "1. You MUST use REAL, existing names of locations and restaurants. DO NOT use generic placeholders like 'Resort' or 'Local Eatery'.\n" +
+                "2. All output text (summary, name, description) MUST be entirely in %s language. Only keep English for proper nouns if necessary.\n" +
+                "3. You MUST return ONLY valid JSON matching this exact schema:\n" +
                 "{\n" +
                 "  \"totalCost\": <number>,\n" +
                 "  \"days\": [\n" +
@@ -168,7 +177,7 @@ public class AIOrchestrator {
                 "}",
                 itinerary.getDayNumber(), trip.getDestination(), itinerary.getDate(),
                 trip.getBudget().divide(java.math.BigDecimal.valueOf(totalDays), 2, java.math.RoundingMode.HALF_UP),
-                itinerary.getDayNumber()
+                language, itinerary.getDayNumber()
         );
         return !feedback.isBlank() ? base + "\nUser feedback: " + feedback : base;
     }

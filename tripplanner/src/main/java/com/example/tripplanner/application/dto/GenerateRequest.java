@@ -11,4 +11,5 @@ public class GenerateRequest {
 
     private String model;
     private String promptVersion;
+    private String language = "Vietnamese";
 }

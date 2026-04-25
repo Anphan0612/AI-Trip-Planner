@@ -154,6 +154,7 @@ export default function PlanTrip() {
       // Step 2: Generate AI itinerary
       await tripApi.generate(trip.id, {
         preferences: buildPreferences(),
+        language: 'Vietnamese',
       });
 
       // Step 3: Navigate to itinerary view

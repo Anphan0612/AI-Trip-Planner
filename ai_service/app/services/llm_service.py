@@ -128,7 +128,7 @@ Return JSON ONLY:
                 }
 
                 try:
-                    async with httpx.AsyncClient(timeout=60.0) as client:
+                    async with httpx.AsyncClient(timeout=180.0) as client:
                         response = await client.post(self.api_url, headers=headers, json=payload)
 
                         if response.status_code == 429:
@@ -203,7 +203,7 @@ Return JSON ONLY:
                 }
 
                 try:
-                    async with httpx.AsyncClient(timeout=30.0) as client:
+                    async with httpx.AsyncClient(timeout=180.0) as client:
                         response = await client.post(self.api_url, headers=headers, json=payload)
 
                         if response.status_code == 429:

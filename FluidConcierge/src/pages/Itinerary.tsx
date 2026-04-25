@@ -294,7 +294,7 @@ export default function Itinerary() {
     if (!tripId) return;
     setIsRegenerating(true);
     try {
-      await tripApi.regenerate(tripId, { feedback: 'Vui lòng tạo lại lịch trình với gợi ý mới.' });
+      await tripApi.regenerate(tripId, { feedback: 'Vui lòng tạo lại lịch trình với gợi ý mới.', language: 'Vietnamese' });
       const freshItineraries = await itineraryApi.getByTrip(tripId);
       setItineraries(freshItineraries);
     } catch {
@@ -337,7 +337,7 @@ export default function Itinerary() {
     if (!confirm('Tạo lại ngày này? Các hoạt động hiện tại sẽ bị thay thế.')) return;
     if (!tripId) return;
     try {
-      await itineraryApi.regenerateDay(tripId, itineraryId);
+      await itineraryApi.regenerateDay(tripId, itineraryId, { language: 'Vietnamese' });
       const freshItineraries = await itineraryApi.getByTrip(tripId);
       setItineraries(freshItineraries);
     } catch {

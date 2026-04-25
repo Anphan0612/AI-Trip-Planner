@@ -29,8 +29,9 @@ public class RegenerateSingleDayUseCase {
         itinerary.getActivities().clear();
 
         // Regenerate activities for this single day using AI
-        String feedback = request != null ? request.getFeedback() : "";
-        orchestrator.orchestrateSingleDay(itinerary, feedback);
+        String feedback = request != null && request.getFeedback() != null ? request.getFeedback() : "";
+        String language = request != null && request.getLanguage() != null ? request.getLanguage() : "Vietnamese";
+        orchestrator.orchestrateSingleDay(itinerary, feedback, language);
 
         // Save and return
         Itinerary saved = itineraryRepository.save(itinerary);

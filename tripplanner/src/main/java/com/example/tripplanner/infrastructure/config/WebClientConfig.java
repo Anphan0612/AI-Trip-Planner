@@ -16,7 +16,7 @@ public class WebClientConfig {
     public WebClient webClient(WebClient.Builder builder) {
         HttpClient httpClient = HttpClient.create()
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000) // Connect timeout 10s
-                .responseTimeout(Duration.ofSeconds(60)); // Wait up to 60s for AI to generate response
+                .responseTimeout(Duration.ofSeconds(180)); // Wait up to 180s for AI to generate response
 
         return builder
                 .clientConnector(new ReactorClientHttpConnector(httpClient))

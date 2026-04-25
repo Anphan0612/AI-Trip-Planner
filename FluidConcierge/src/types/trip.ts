@@ -74,11 +74,13 @@ export interface CreateTripRequest {
 export interface GenerateRequest {
   preferences?: string;
   promptVersion?: string;
+  language?: string;
 }
 
 export interface RegenerateRequest {
   feedback?: string;
   promptVersion?: string;
+  language?: string;
 }
 
 export interface ActivityRequest {
