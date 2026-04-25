@@ -4,6 +4,9 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiLogDetailResponse.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiLogPageResponse.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiLogSummaryResponse.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiServiceEntityResponse.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiServiceParseRequest.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AiServiceParseResponse.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\AuthResponse.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\GenerateRequest.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\GenerateResponse.java
@@ -11,7 +14,8 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\ItineraryUpdateRequest.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\LoginRequest.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\ParseTripRequest.java
-D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\ParseTripResponse.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\ParseTripResult.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\RecommendationResponse.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\RegenerateRequest.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\RegisterRequest.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\dto\RetryStatsDto.java
@@ -22,8 +26,10 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\mapper\AiLogMapper.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\mapper\TripMapper.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\orchestrator\AIOrchestrator.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\orchestrator\AiResponseParser.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\port\PasswordEncoder.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\port\TokenProvider.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\service\AiProxyService.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\service\AnalyticsService.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\service\ExploreRecommendationService.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\CreateActivityUseCase.java
@@ -39,7 +45,6 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\GetTripsByUserUseCase.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\GetTripUseCase.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\LoginUseCase.java
-D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\ParseTripDescriptionUseCase.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\RegenerateSingleDayUseCase.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\RegenerateTripPlanUseCase.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\application\usecase\RegisterUserUseCase.java
@@ -55,6 +60,8 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\ExploreItem.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\ExploreType.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\Itinerary.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\Recommendation.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\RecommendationType.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\Role.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\Trip.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\domain\model\TripStatus.java
@@ -89,6 +96,7 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\JpaTripRepository.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\JpaUserRepository.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\PersistenceMapper.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\RecommendationEntity.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\TripEntity.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\TripRepositoryImpl.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\persistence\UserEntity.java
@@ -99,7 +107,7 @@ D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanne
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\security\JwtTokenProvider.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\infrastructure\security\UserPrincipal.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\ActivityController.java
-D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\AiAssistController.java
+D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\AiController.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\AiLogController.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\AnalyticsController.java
 D:\WORKSPACE\PROJECT JAVA\Nhom1\tripplanner\src\main\java\com\example\tripplanner\interfaces\controller\ExploreController.java

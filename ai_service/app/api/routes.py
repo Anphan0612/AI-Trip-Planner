@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
 from app.models.schemas import ParseRequest, ParseResponse, TripPlanResponse
 from app.pipelines.parse_pipeline import parse_pipeline
 from app.pipelines.trip_pipeline import trip_pipeline
@@ -25,5 +26,32 @@ async def plan_trip(request: ParseRequest):
     try:
         result = await trip_pipeline.execute(request.text, request.user_id)
         return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+class ChatRequest(BaseModel):
+    prompt: str
+
+class ChatResponse(BaseModel):
+    content: str
+    model: str
+    prompt_tokens: int
+    completion_tokens: int
+
+@router.post("/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
+    """
+    Raw chat completions endpoint that proxies to the underlying LLM service.
+    """
+    try:
+        from app.services.llm_service import llm_service
+        messages = [{"role": "user", "content": request.prompt}]
+        response = await llm_service.call_llm_raw(messages)
+        return ChatResponse(
+            content=response["content"],
+            model=response["model"],
+            prompt_tokens=response["prompt_tokens"],
+            completion_tokens=response["completion_tokens"]
+        )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

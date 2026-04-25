@@ -85,9 +85,12 @@ Return JSON ONLY:
 }}"""
 
     def __init__(self):
-        # OpenRouter / 9Router Config
-        self.api_key = os.getenv("LLM_API_KEY", "your-api-key-here")
-        self.api_url = os.getenv("LLM_API_URL", "https://openrouter.ai/api/v1/chat/completions")
+        # 9Router / Ollama Config
+        self.api_key = os.getenv("LLM_API_KEY", "")
+        self.api_url = os.getenv("LLM_API_URL")
+        if not self.api_url:
+            logger.warning("⚠️ No LLM_API_URL configured in .env!")
+            
         # LLM_MODELS: comma-separated list for cascade fallback
         # e.g: model1:free,model2:free,model3:free
         raw_models = os.getenv("LLM_MODELS", "")
@@ -95,6 +98,78 @@ Return JSON ONLY:
         if not self.models:
             logger.warning("⚠️ No LLM_MODELS configured in .env! LLM calls will use mock fallback.")
 
+
+    async def call_llm_raw(self, messages: List[Dict[str, str]], max_retries: int = 2) -> Dict[str, Any]:
+        """
+        Calls the LLM API and returns raw string content + usage metrics.
+        """
+        import asyncio
+        import re as _re
+
+        if self.api_key == "your-api-key-here":
+            logger.warning("No real API key found. Using mock behavior.")
+            return {"content": '{"days":[]}', "model": "mock", "prompt_tokens": 0, "completion_tokens": 0}
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+
+        for model_index, model in enumerate(self.models):
+            logger.info(f"🤖 Trying model [{model_index + 1}/{len(self.models)}]: {model}")
+
+            for attempt in range(1, max_retries + 1):
+                payload = {
+                    "model": model,
+                    "messages": messages,
+                    "temperature": 0.2,
+                    "max_tokens": 2000,
+                    "stream": False
+                }
+
+                try:
+                    async with httpx.AsyncClient(timeout=60.0) as client:
+                        response = await client.post(self.api_url, headers=headers, json=payload)
+
+                        if response.status_code == 429:
+                            wait_seconds = 5
+                            if attempt < max_retries:
+                                await asyncio.sleep(wait_seconds)
+                                continue
+                            else:
+                                break
+
+                        if response.status_code >= 500:
+                            break
+
+                        if response.status_code != 200:
+                            break
+
+                        data = response.json()
+                        choices = data.get("choices", [])
+                        if not choices:
+                            break
+
+                        content = choices[0].get("message", {}).get("content", "")
+                        if not content:
+                            break
+                            
+                        usage = data.get("usage", {})
+
+                        logger.info(f"✅ LLM success with model '{model}'.")
+                        return {
+                            "content": content,
+                            "model": model,
+                            "prompt_tokens": usage.get("prompt_tokens", 0),
+                            "completion_tokens": usage.get("completion_tokens", 0)
+                        }
+
+                except Exception as e:
+                    logger.error(f"LLM call error [{model}]: {e}")
+                    break
+
+        logger.error("❌ All models exhausted. Falling back to mock.")
+        return {"content": '{"days":[]}', "model": "mock", "prompt_tokens": 0, "completion_tokens": 0}
 
     async def call_llm(self, messages: List[Dict[str, str]], max_retries: int = 2) -> Dict[str, Any]:
         """

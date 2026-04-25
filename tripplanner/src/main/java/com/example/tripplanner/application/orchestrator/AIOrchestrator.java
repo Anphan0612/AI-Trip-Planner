@@ -22,6 +22,7 @@ public class AIOrchestrator {
     private final AiServicePort aiServicePort;
     private final AiLogRepository aiLogRepository;
     private final AiResponseValidator validator;
+    private final AiResponseParser parser;
 
     /**
      * First-time AI trip generation.
@@ -99,6 +100,7 @@ public class AIOrchestrator {
             if (validation.isValid()) {
                 log.info("Validation passed on attempt {}. totalTokens={}", attempt + 1, state.totalTokens());
                 state.markSuccess();
+                parser.parseAndPopulate(trip, aiResponse.content());
                 break;
             }
 
@@ -119,20 +121,56 @@ public class AIOrchestrator {
     private String buildPrompt(Trip trip, String extra) {
         int days = (int) (trip.getEndDate().toEpochDay() - trip.getStartDate().toEpochDay()) + 1;
         String base = String.format(
-                "Generate a %d-day trip plan in JSON for %s from %s to %s. Budget: %s. Return ONLY JSON.",
+                "Generate a %d-day travel itinerary for %s from %s to %s. Budget: %s. " +
+                "You MUST return ONLY valid JSON matching this exact schema, with no markdown, no explanation:\n" +
+                "{\n" +
+                "  \"totalCost\": <number>,\n" +
+                "  \"recommendedHotels\": [ { \"name\": \"\", \"description\": \"\", \"location\": \"\", \"priceLevel\": \"$$\" } ],\n" +
+                "  \"recommendedRestaurants\": [ { \"name\": \"\", \"description\": \"\", \"location\": \"\", \"priceLevel\": \"$$\" } ],\n" +
+                "  \"days\": [\n" +
+                "    {\n" +
+                "      \"dayNumber\": 1,\n" +
+                "      \"summary\": \"<string>\",\n" +
+                "      \"activities\": [\n" +
+                "        {\n" +
+                "          \"name\": \"<string>\",\n" +
+                "          \"description\": \"<string>\",\n" +
+                "          \"location\": \"<string>\",\n" +
+                "          \"startTime\": \"09:00\",\n" +
+                "          \"endTime\": \"10:30\",\n" +
+                "          \"cost\": <number>\n" +
+                "        }\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}",
                 days, trip.getDestination(), trip.getStartDate(), trip.getEndDate(), trip.getBudget()
         );
-        return !extra.isBlank() ? base + " Extra context: " + extra : base;
+        return !extra.isBlank() ? base + "\nUser context: " + extra : base;
     }
 
     private String buildSingleDayPrompt(Trip trip, Itinerary itinerary, String feedback) {
         long totalDays = (trip.getEndDate().toEpochDay() - trip.getStartDate().toEpochDay()) + 1;
         String base = String.format(
-                "Generate activities for day %d of a trip to %s on %s. Budget per day: %s. Return ONLY JSON with activities array.",
+                "Generate activities for day %d of a trip to %s on %s. Budget: %s. " +
+                "You MUST return ONLY valid JSON matching this exact schema:\n" +
+                "{\n" +
+                "  \"totalCost\": <number>,\n" +
+                "  \"days\": [\n" +
+                "    {\n" +
+                "      \"dayNumber\": %d,\n" +
+                "      \"summary\": \"<string>\",\n" +
+                "      \"activities\": [\n" +
+                "        { \"name\": \"\", \"description\": \"\", \"location\": \"\", \"startTime\": \"09:00\", \"endTime\": \"10:30\", \"cost\": <number> }\n" +
+                "      ]\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}",
                 itinerary.getDayNumber(), trip.getDestination(), itinerary.getDate(),
-                trip.getBudget().divide(java.math.BigDecimal.valueOf(totalDays), 2, java.math.RoundingMode.HALF_UP)
+                trip.getBudget().divide(java.math.BigDecimal.valueOf(totalDays), 2, java.math.RoundingMode.HALF_UP),
+                itinerary.getDayNumber()
         );
-        return !feedback.isBlank() ? base + " User feedback: " + feedback : base;
+        return !feedback.isBlank() ? base + "\nUser feedback: " + feedback : base;
     }
 
     private String buildRetryPrompt(String errorMessage, String previousContent) {

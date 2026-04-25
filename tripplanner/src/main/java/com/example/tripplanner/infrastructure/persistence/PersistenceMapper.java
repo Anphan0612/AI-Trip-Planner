@@ -73,7 +73,11 @@ public class PersistenceMapper {
 
         if (entity.getItineraries() != null) {
             domain.setItineraries(entity.getItineraries().stream()
-                    .map(this::toDomain)
+                    .map(itEntity -> {
+                        Itinerary it = toDomain(itEntity);
+                        if (it != null) it.setTrip(domain);
+                        return it;
+                    })
                     .collect(Collectors.toList()));
         }
         return domain;
@@ -114,9 +118,17 @@ public class PersistenceMapper {
                 .createdAt(entity.getCreatedAt())
                 .build();
 
+        if (entity.getTrip() != null) {
+            domain.setTrip(Trip.builder().id(entity.getTrip().getId()).build());
+        }
+
         if (entity.getActivities() != null) {
             domain.setActivities(entity.getActivities().stream()
-                    .map(this::toDomain)
+                    .map(actEntity -> {
+                        Activity act = toDomain(actEntity);
+                        if (act != null) act.setItinerary(domain);
+                        return act;
+                    })
                     .collect(Collectors.toList()));
         }
         return domain;
@@ -146,7 +158,7 @@ public class PersistenceMapper {
 
     public Activity toDomain(ActivityEntity entity) {
         if (entity == null) return null;
-        return Activity.builder()
+        Activity domain = Activity.builder()
                 .id(entity.getId())
                 .name(entity.getName())
                 .description(entity.getDescription())
@@ -157,6 +169,12 @@ public class PersistenceMapper {
                 .activityOrder(entity.getActivityOrder())
                 .createdAt(entity.getCreatedAt())
                 .build();
+                
+        if (entity.getItinerary() != null) {
+            domain.setItinerary(Itinerary.builder().id(entity.getItinerary().getId()).build());
+        }
+        
+        return domain;
     }
 
     // AiLog mapping

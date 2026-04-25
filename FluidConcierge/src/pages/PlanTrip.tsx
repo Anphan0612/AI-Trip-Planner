@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { tripApi, aiApi } from '../services/api';
-import { TEST_USER_ID, BUDGET_VALUES } from '../types/trip';
+import { BUDGET_VALUES } from '../types/trip';
+import { useAuth } from '../context/AuthContext';
 
 type BudgetSlider = 1 | 2 | 3;
 type TravelStyle = 'Ẩm thực' | 'Thư giãn' | 'Phiêu lưu' | 'Văn hóa' | 'Mua sắm' | 'Về đêm';
@@ -32,6 +33,7 @@ const TRAVEL_STYLES = STYLE_OPTIONS.map(o => o.text);
 export default function PlanTrip() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user } = useAuth();
 
   // Form state
   const [origin, setOrigin] = useState('');
@@ -97,7 +99,7 @@ export default function PlanTrip() {
       if (result.travelStyles && result.travelStyles.length > 0) {
         setSelectedStyles(result.travelStyles as TravelStyle[]);
       }
-    } catch (err: unknown) {
+    } catch {
       setError('Không thể phân tích mô tả của bạn. Thử lại sau nhé.');
     } finally {
       setIsParsing(false);
@@ -132,12 +134,16 @@ export default function PlanTrip() {
     setIsGenerating(true);
 
     try {
+      if (!user?.id) {
+        throw new Error("Bạn chưa đăng nhập. Vui lòng đăng nhập lại.");
+      }
+
       const budgetKey = BUDGET_MAP[budgetSlider];
       const budgetValue = BUDGET_VALUES[budgetKey];
 
       // Step 1: Create trip
       const trip = await tripApi.create({
-        userId: TEST_USER_ID,
+        userId: user.id,
         title: `${destination} – ${startDate}`,
         destination,
         startDate,
@@ -155,13 +161,26 @@ export default function PlanTrip() {
     } catch (err: unknown) {
       const message =
         err && typeof err === 'object' && 'response' in err
-          ? (err as { response?: { data?: { message?: string } } }).response?.data?.message ?? 'Đã có lỗi xảy ra.'
-          : 'Không thể kết nối đến server. Vui lòng kiểm tra backend đang chạy.';
+          ? (err as { response?: { data?: { message?: string } } }).response?.data?.message ?? 'Đã có lỗi xảy ra. Vui lòng thử lại.'
+          : 'Không thể kết nối đến server. Vui lòng thử lại.';
       setError(message);
     } finally {
       setIsGenerating(false);
     }
   };
+
+  // Warn user if they try to leave while generating
+  useEffect(() => {
+    if (!isGenerating) return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = ''; // Required for standard browsers to show the warning
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [isGenerating]);
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -231,9 +250,17 @@ export default function PlanTrip() {
 
             {/* Error banner */}
             {error && (
-              <div className="flex items-center gap-3 bg-error-container/20 border border-error/20 text-on-error-container rounded-xl px-4 py-3 text-sm font-medium">
-                <span className="material-symbols-outlined text-error">error</span>
-                {error}
+              <div className="flex items-center justify-between gap-3 bg-error-container/20 border border-error/20 text-on-error-container rounded-xl px-4 py-3 text-sm font-medium">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-error">error</span>
+                  {error}
+                </div>
+                <button
+                  onClick={handleGenerate}
+                  className="px-4 py-2 bg-error/10 text-error rounded-lg font-bold hover:bg-error/20 transition-colors"
+                >
+                  Thử lại
+                </button>
               </div>
             )}
 

@@ -27,4 +27,5 @@ router9:
     key: ${9ROUTER_API_KEY:}
     url: http://localhost:20128/v1/chat/completions
 
-
+ai-service:
+  url: http://localhost:8000/ai

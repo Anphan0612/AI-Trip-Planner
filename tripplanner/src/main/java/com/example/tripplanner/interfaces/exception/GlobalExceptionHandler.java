@@ -56,12 +56,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleRuntime(RuntimeException ex,
                                                               HttpServletRequest request) {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
-        if (ex.getMessage().contains("already exists") || ex.getMessage().contains("Invalid email or password")) {
+        String message = ex.getMessage() != null ? ex.getMessage() : ex.getClass().getSimpleName();
+        
+        if (message.contains("already exists") || message.contains("Invalid email or password")) {
             status = HttpStatus.BAD_REQUEST;
         }
         
         return ResponseEntity.status(status).body(errorBody(
-                status, ex.getMessage(), request.getRequestURI()
+                status, message, request.getRequestURI()
         ));
     }
 

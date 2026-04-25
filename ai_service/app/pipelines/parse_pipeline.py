@@ -11,6 +11,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 from typing import Dict, Any
+import datetime
+from datetime import timedelta
 
 class ParsePipeline:
     async def execute(self, text: str, user_profile: Dict[str, Any] = None) -> ParseResponse:
@@ -55,6 +57,23 @@ class ParsePipeline:
             # Even if LLM repairs it, we might keep the confidence score as it was before repair, 
             # or optionally boost it. For now, keep it to show why it fell back.
         
+        # --- DATE CALCULATION LOGIC ---
+        time_str = entities_dict.get("time")
+        duration = entities_dict.get("duration_days") or 1
+        
+        start_date_obj = datetime.date.today()
+        if time_str:
+            t = time_str.lower()
+            if "ngày mai" in t or "hôm sau" in t:
+                start_date_obj += timedelta(days=1)
+            elif "tuần sau" in t or "tuần tới" in t:
+                start_date_obj += timedelta(days=7)
+            elif "tháng sau" in t or "tháng tới" in t:
+                start_date_obj += timedelta(days=30)
+            
+        entities_dict["start_date"] = start_date_obj.isoformat()
+        entities_dict["end_date"] = (start_date_obj + timedelta(days=max(0, duration - 1))).isoformat()
+
         # 6. Build Response
         return ParseResponse(
             intent=intent,

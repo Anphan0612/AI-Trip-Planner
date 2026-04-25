@@ -18,7 +18,7 @@ function formatTime(timeStr: string | null | undefined): string {
 
 function formatCurrency(amount: number): string {
   if (amount === 0) return 'Miễn phí';
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount * 25000);
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 }
 
 function formatDate(dateStr: string): string {
@@ -276,6 +276,20 @@ export default function Itinerary() {
     return () => clearInterval(interval);
   }, [tripId]);
 
+  // Warn user if they try to leave while generating
+  useEffect(() => {
+    const isGeneratingState = trip?.status === 'GENERATING' || isRegenerating;
+    if (!isGeneratingState) return;
+
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [trip?.status, isRegenerating]);
+
   const handleRegenerate = async () => {
     if (!tripId) return;
     setIsRegenerating(true);
@@ -339,9 +353,14 @@ export default function Itinerary() {
       <div className="p-8 flex flex-col items-center justify-center min-h-[calc(100vh-64px)] gap-6">
         <span className="material-symbols-outlined text-6xl text-error">error</span>
         <p className="text-on-surface-variant text-center">{error}</p>
-        <button onClick={() => navigate('/')} className="px-6 py-3 bg-primary text-white rounded-full font-bold">
-          Về trang chủ
-        </button>
+        <div className="flex gap-4">
+          <button onClick={() => window.location.reload()} className="px-6 py-3 bg-surface-container-high text-on-surface rounded-full font-bold hover:bg-surface-container-highest transition-colors">
+            Thử lại
+          </button>
+          <button onClick={() => navigate('/')} className="px-6 py-3 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-colors">
+            Về trang chủ
+          </button>
+        </div>
       </div>
     );
   }

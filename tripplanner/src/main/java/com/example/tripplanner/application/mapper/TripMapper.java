@@ -33,13 +33,15 @@ public final class TripMapper {
     }
 
     public static ItineraryResponse toItineraryResponse(Itinerary itinerary) {
-        List<ActivityResponse> activities = itinerary.getActivities().stream()
-                .map(TripMapper::toActivityResponse)
-                .toList();
+        List<ActivityResponse> activities = itinerary.getActivities() != null 
+                ? itinerary.getActivities().stream()
+                    .map(TripMapper::toActivityResponse)
+                    .toList()
+                : List.of();
 
         return ItineraryResponse.builder()
                 .id(itinerary.getId())
-                .tripId(itinerary.getTrip().getId())
+                .tripId(itinerary.getTrip() != null ? itinerary.getTrip().getId() : null)
                 .dayNumber(itinerary.getDayNumber())
                 .date(itinerary.getDate())
                 .summary(itinerary.getSummary())
@@ -50,7 +52,7 @@ public final class TripMapper {
     public static ActivityResponse toActivityResponse(Activity activity) {
         return ActivityResponse.builder()
                 .id(activity.getId())
-                .itineraryId(activity.getItinerary().getId())
+                .itineraryId(activity.getItinerary() != null ? activity.getItinerary().getId() : null)
                 .name(activity.getName())
                 .description(activity.getDescription())
                 .location(activity.getLocation())

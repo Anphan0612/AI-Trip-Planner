@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { tripApi } from '../services/api';
-import { TEST_USER_ID } from '../types/trip';
 import type { TripResponse } from '../types/trip';
+import { useAuth } from '../context/AuthContext';
 
 const STATUS_LABELS: Record<string, string> = {
   DRAFT:      'Nháp',
@@ -61,13 +61,16 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [trips, setTrips] = useState<TripResponse[]>([]);
   const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
 
   useEffect(() => {
-    tripApi.getAll(TEST_USER_ID)
+    if (!user?.id) return;
+    
+    tripApi.getAll(user.id)
       .then(setTrips)
       .catch(console.error)
       .finally(() => setLoading(false));
-  }, []);
+  }, [user?.id]);
 
   const totalDays = trips.reduce((sum, t) => sum + calcDays(t.startDate, t.endDate), 0);
   const totalBudget = trips.reduce((sum, t) => sum + Number(t.budget), 0);

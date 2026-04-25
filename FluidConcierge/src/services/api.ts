@@ -17,7 +17,15 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 60000, // 60s timeout — AI generation can be slow
+});
+
+// Add interceptor to include JWT token in requests
+apiClient.interceptors.request.use(config => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 // ── Trip endpoints ──────────────────────────────────────────────────────────
