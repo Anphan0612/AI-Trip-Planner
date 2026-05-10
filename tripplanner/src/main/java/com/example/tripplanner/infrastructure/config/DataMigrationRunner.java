@@ -45,37 +45,6 @@ public class DataMigrationRunner implements CommandLineRunner {
             log.warn("Could not create shared_content_images table (may already exist or Hibernate will handle it): {}", e.getMessage());
         }
 
-        // 4. Force Cleanup as requested
-        log.info("Performing forced database cleanup...");
-        try {
-            jdbcTemplate.execute("DELETE FROM shared_content_images");
-            jdbcTemplate.execute("DELETE FROM shared_contents");
-            log.info("Deleted all shared content and image records.");
-        } catch (Exception e) {
-            log.warn("Cleanup DELETE failed: {}", e.getMessage());
-        }
-
-        try {
-            // Updating activities and trips counters (if columns exist)
-            jdbcTemplate.update("UPDATE activities SET total_votes = 0, rating = 0, total_rating_sum = 0 WHERE 1=1");
-            log.info("Reset activities counters.");
-        } catch (Exception e) {
-            log.warn("Could not update activities counters (columns may not exist): {}", e.getMessage());
-        }
-
-        try {
-            jdbcTemplate.update("UPDATE trips SET total_votes = 0, rating = 0, total_rating_sum = 0 WHERE 1=1");
-            log.info("Reset trips counters.");
-        } catch (Exception e) {
-            log.warn("Could not update trips counters (columns may not exist): {}", e.getMessage());
-        }
-
-        try {
-            // Also reset explore_items as it's common in this project
-            jdbcTemplate.update("UPDATE explore_items SET average_rating = 0, review_count = 0 WHERE 1=1");
-            log.info("Reset explore_items counters.");
-        } catch (Exception e) {
-            log.warn("Could not update explore_items counters: {}", e.getMessage());
-        }
+        
     }
 }

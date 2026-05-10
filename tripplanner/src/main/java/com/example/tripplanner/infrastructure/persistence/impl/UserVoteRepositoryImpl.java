@@ -1,7 +1,10 @@
-package com.example.tripplanner.infrastructure.persistence;
+package com.example.tripplanner.infrastructure.persistence.impl;
 
 import com.example.tripplanner.domain.model.UserVote;
 import com.example.tripplanner.domain.port.UserVoteRepository;
+import com.example.tripplanner.infrastructure.persistence.JpaUserVoteRepository;
+import com.example.tripplanner.infrastructure.persistence.PersistenceMapper;
+import com.example.tripplanner.infrastructure.persistence.UserVoteEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
