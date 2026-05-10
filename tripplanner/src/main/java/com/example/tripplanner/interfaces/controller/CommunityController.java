@@ -26,6 +26,8 @@ public class CommunityController {
     private final GetPendingContentUseCase getPendingContentUseCase;
     private final ModerateContentUseCase moderateContentUseCase;
     private final GetExploreItemReviewsUseCase getExploreItemReviewsUseCase;
+    private final GetModerationStatsUseCase getModerationStatsUseCase;
+    private final GetTopContributorsUseCase getTopContributorsUseCase;
 
     @PostMapping(value = "/share", consumes = {"multipart/form-data"})
     public ResponseEntity<SharedContentResponse> shareContent(
@@ -109,5 +111,15 @@ public class CommunityController {
     public ResponseEntity<Void> reject(@PathVariable UUID id) {
         moderateContentUseCase.execute(id, com.example.tripplanner.domain.model.ShareStatus.REJECTED);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/admin/stats")
+    public ResponseEntity<ModerationStatsResponse> getStats() {
+        return ResponseEntity.ok(getModerationStatsUseCase.execute());
+    }
+
+    @GetMapping("/admin/contributors")
+    public ResponseEntity<List<ContributorResponse>> getTopContributors(@RequestParam(defaultValue = "5") int limit) {
+        return ResponseEntity.ok(getTopContributorsUseCase.execute(limit));
     }
 }

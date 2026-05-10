@@ -74,8 +74,15 @@ const ShareModal: React.FC<ShareModalProps> = ({
                 <h2 className="text-3xl font-black text-slate-900 leading-none">Chia sẻ trải nghiệm</h2>
                 {subtitle && <p className="text-emerald-600/70 text-sm mt-1">{subtitle}</p>}
               </div>
+              <button 
+                onClick={onClose}
+                className="text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
 
-              <form onSubmit={handleSubmit} className="p-8 space-y-6 overflow-y-auto flex-1 relative">
+            <form onSubmit={handleSubmit} className="p-8 space-y-6 overflow-y-auto flex-1 relative">
                 {isSuccess && (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -205,7 +212,6 @@ const ShareModal: React.FC<ShareModalProps> = ({
                   </button>
                 </div>
               </form>
-            </div>
           </motion.div>
         </div>
       )}

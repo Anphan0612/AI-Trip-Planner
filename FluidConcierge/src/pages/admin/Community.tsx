@@ -5,12 +5,41 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Community() {
   const [pendingItems, setPendingItems] = useState<SharedContentResponse[]>([]);
+  const [trendingTrips, setTrendingTrips] = useState<SharedContentResponse[]>([]);
+  const [trendingActivities, setTrendingActivities] = useState<SharedContentResponse[]>([]);
+  const [topContributors, setTopContributors] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [archivedCount, setArchivedCount] = useState(0);
 
   useEffect(() => {
-    fetchPending();
+    Promise.all([
+      fetchPending(),
+      fetchTrending(),
+      fetchContributors()
+    ]);
   }, []);
+
+  const fetchContributors = async () => {
+    try {
+      const data = await communityApi.getTopContributors(3);
+      setTopContributors(data);
+    } catch (error) {
+      console.error('Failed to fetch contributors:', error);
+    }
+  };
+
+  const fetchTrending = async () => {
+    try {
+      const [trips, activities] = await Promise.all([
+        communityApi.getTrending('TRIP', 1),
+        communityApi.getTrending('ACTIVITY', 1)
+      ]);
+      setTrendingTrips(trips);
+      setTrendingActivities(activities);
+    } catch (error) {
+      console.error('Failed to fetch trending data:', error);
+    }
+  };
 
   const fetchPending = async () => {
     try {
@@ -129,17 +158,16 @@ export default function Community() {
             <AnimatePresence mode="popLayout">
               {pendingItems.map((item) => {
                 const details = parseContent(item.content);
+                
                 return (
                   <motion.div
                     key={item.id}
                     layout
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    className="bg-[#151923] rounded-3xl p-6 border border-slate-800/60 ring-1 ring-sky-500/20 shadow-[0_0_15px_rgba(14,165,233,0.05)] relative overflow-hidden"
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="bg-[#151923] rounded-[32px] p-6 border border-slate-800/60 hover:border-slate-700 transition-all shadow-lg shadow-black/20"
                   >
-                    <div className="absolute top-0 left-0 w-1 h-full bg-sky-500 rounded-l-3xl"></div>
-                    
                     <div className="flex justify-between items-start mb-4">
                       <div className="flex items-center gap-4">
                         <img 
@@ -163,11 +191,6 @@ export default function Community() {
                     </div>
 
                     <div className="mb-4">
-                      <div className="flex text-yellow-500 text-sm mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: `'FILL' ${i < item.rating ? 1 : 0}` }}>star</span>
-                        ))}
-                      </div>
                       <h4 className="text-xl font-bold text-white mb-2">{item.description || 'No Title'}</h4>
                       
                       {item.imageUrls && item.imageUrls.length > 0 && (
@@ -229,137 +252,29 @@ export default function Community() {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#151923] rounded-2xl p-4 border border-slate-800/60">
-                <div className="flex items-center gap-2 text-yellow-500 text-xs font-bold uppercase tracking-wider mb-2">
-                  <span className="material-symbols-outlined text-[16px]">trending_up</span>
-                  Most Voted
+              {trendingTrips[0] ? (
+                <div className="bg-[#151923] rounded-2xl p-4 border border-slate-800/60">
+                  <div className="flex items-center gap-2 text-yellow-500 text-xs font-bold uppercase tracking-wider mb-2">
+                    <span className="material-symbols-outlined text-[16px]">trending_up</span>
+                    Most Voted Trip
+                  </div>
+                  <h4 className="font-bold text-white mb-2 line-clamp-1">{trendingTrips[0].description || 'Untitled Trip'}</h4>
+                  <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
+                    <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">thumb_up</span> {trendingTrips[0].totalVotes}</span>
+                  </div>
                 </div>
-                <h4 className="font-bold text-white mb-2 line-clamp-1">The Ultimate Tokyo Nightlife Guide</h4>
-                <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">thumb_up</span> 1.2k</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">chat_bubble</span> 48</span>
+              ) : (
+                <div className="bg-[#151923] rounded-2xl p-4 border border-slate-800/60 animate-pulse">
+                   <div className="h-4 bg-slate-800 rounded w-1/2 mb-2"></div>
+                   <div className="h-4 bg-slate-800 rounded w-3/4"></div>
                 </div>
-              </div>
-              <div className="bg-[#151923] rounded-2xl p-4 border border-slate-800/60">
-                <div className="flex items-center gap-2 text-sky-400 text-xs font-bold uppercase tracking-wider mb-2">
-                  <span className="material-symbols-outlined text-[16px]">bolt</span>
-                  Rapid Growth
-                </div>
-                <h4 className="font-bold text-white mb-2 line-clamp-1">Hidden Waterfalls of Bali</h4>
-                <div className="flex items-center gap-4 text-slate-400 text-sm font-medium">
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">thumb_up</span> 856</span>
-                  <span className="flex items-center gap-1"><span className="material-symbols-outlined text-[16px]">chat_bubble</span> 12</span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Side Panels (Right) */}
         <div className="xl:col-span-1 space-y-6">
-          
-          {/* Detail View Panel */}
-          <div className="bg-[#151923] rounded-3xl p-6 border border-slate-800/60">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-white text-lg">Detail View</h3>
-              <button className="text-slate-400 hover:text-white transition-colors">
-                <span className="material-symbols-outlined text-xl">open_in_new</span>
-              </button>
-            </div>
-
-            <div className="relative rounded-2xl overflow-hidden mb-4 h-48">
-              <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=500&h=300&fit=crop" className="w-full h-full object-cover" alt="Sushi" />
-              <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-md">
-                1/4
-              </div>
-            </div>
-
-            <h4 className="text-xl font-bold text-sky-400 mb-2 leading-tight">Hidden Gem in Kyoto:<br/>Kura Sushi</h4>
-            
-            <div className="flex items-center gap-2 text-sm text-slate-300 mb-4 font-semibold">
-              <div className="flex text-yellow-500 text-sm">
-                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              </div>
-              <span>&bull; 5.0 Rating</span>
-            </div>
-
-            <div className="text-slate-400 text-sm leading-relaxed space-y-4 mb-6">
-              <p>
-                This place is tucked away in an alley near the Gion district. The service was impeccable and the seasonal omakase was life-changing.
-              </p>
-              <p>
-                Make sure to try the bluefin tuna belly with gold leaf. The atmosphere is quiet and sophisticated, perfect for a high-end date or a peaceful solo meal.
-              </p>
-              
-              <div>
-                <strong className="text-white">Pros:</strong>
-                <ul className="list-none space-y-1 mt-1">
-                  <li>- Freshest ingredients in Kyoto</li>
-                  <li>- Intimate setting</li>
-                  <li>- Extensive sake list</li>
-                </ul>
-              </div>
-              
-              <div>
-                <strong className="text-white">Cons:</strong>
-                <ul className="list-none space-y-1 mt-1">
-                  <li>- Need to book 3 weeks in advance</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-[#0F1115] rounded-xl p-4 space-y-3">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-slate-400 font-medium">Author Safety Score:</span>
-                <span className="text-sky-400 font-bold flex flex-col items-end">
-                  98%
-                  <span className="text-[10px] text-sky-400/70 uppercase">(Trusted)</span>
-                </span>
-              </div>
-              <div className="flex justify-between items-center text-sm pt-3 border-t border-slate-800">
-                <span className="text-slate-400 font-medium">AI Content Check:</span>
-                <span className="text-emerald-400 font-bold">Passed (Clean)</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Today's Activity */}
-          <div className="bg-[#151923] rounded-3xl p-6 border border-slate-800/60">
-            <h3 className="font-bold text-white text-lg mb-4">Today's Activity</h3>
-            
-            <div className="space-y-3 mb-6">
-              <div className="bg-[#1C2333] rounded-xl p-4 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-emerald-400">check_circle</span>
-                  <span className="text-slate-300 font-semibold">Approved</span>
-                </div>
-                <span className="text-white font-bold text-lg">128</span>
-              </div>
-              <div className="bg-[#1C2333] rounded-xl p-4 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-red-400">cancel</span>
-                  <span className="text-slate-300 font-semibold">Rejected</span>
-                </div>
-                <span className="text-white font-bold text-lg">14</span>
-              </div>
-              <div className="bg-[#1C2333] rounded-xl p-4 flex justify-between items-center border border-slate-600/50">
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-slate-400">hourglass_empty</span>
-                  <span className="text-slate-300 font-semibold">Pending</span>
-                </div>
-                <span className="text-sky-400 font-bold text-lg">{pendingItems.length}</span>
-              </div>
-            </div>
-
-            <button className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-colors">
-              Download Activity Report
-            </button>
-          </div>
-
           {/* Top Contributors */}
           <div className="bg-[#151923] rounded-3xl p-6 border border-slate-800/60">
             <div className="flex items-center gap-2 mb-4">
@@ -368,41 +283,26 @@ export default function Community() {
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elena" alt="Elena" className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700" />
-                  <div>
-                    <h4 className="font-bold text-white text-sm">Elena Vance</h4>
-                    <p className="text-xs text-slate-400 font-medium">9.4k impact &bull; 142 Reviews</p>
+              {topContributors.length > 0 ? topContributors.map((c, i) => (
+                <div key={c.userId} className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${c.name}`} alt={c.name} className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700" />
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-white text-sm truncate">{c.name}</h4>
+                      <p className="text-xs text-slate-400 font-medium">
+                        {(c.totalImpact / 1000).toFixed(1)}k impact &bull; {c.contributionCount} Posts
+                      </p>
+                    </div>
                   </div>
+                  <span className="text-slate-500 font-bold text-sm">#{i + 1}</span>
                 </div>
-                <span className="text-slate-500 font-bold text-sm">#1</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-indigo-900 text-indigo-300 flex items-center justify-center font-bold text-sm border border-indigo-700">MK</div>
-                  <div>
-                    <h4 className="font-bold text-white text-sm">Marcus Kane</h4>
-                    <p className="text-xs text-slate-400 font-medium">4.2k impact &bull; 89 Trips</p>
-                  </div>
+              )) : (
+                <div className="text-center py-4 text-slate-500 text-sm italic">
+                  No contributors found yet.
                 </div>
-                <span className="text-slate-500 font-bold text-sm">#2</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Sarah" className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700" />
-                  <div>
-                    <h4 className="font-bold text-white text-sm">Sarah Jenkins</h4>
-                    <p className="text-xs text-slate-400 font-medium">3.8k impact &bull; 74 Posts</p>
-                  </div>
-                </div>
-                <span className="text-slate-500 font-bold text-sm">#3</span>
-              </div>
+              )}
             </div>
           </div>
-
         </div>
       </div>
     </div>

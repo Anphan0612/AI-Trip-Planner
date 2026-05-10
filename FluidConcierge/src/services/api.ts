@@ -177,5 +177,11 @@ export const communityApi = {
 
   rejectContent: (id: string): Promise<void> =>
     apiClient.post(`/community/admin/${id}/reject`).then(r => r.data),
+
+  getAdminStats: (): Promise<{ pendingCount: number; approvedCount: number; rejectedCount: number }> =>
+    apiClient.get('/community/admin/stats').then(r => r.data),
+
+  getTopContributors: (limit: number = 5): Promise<any[]> =>
+    apiClient.get(`/community/admin/contributors`, { params: { limit } }).then(r => r.data),
 };
 

@@ -21,4 +21,12 @@ public interface JpaSharedContentRepository extends JpaRepository<SharedContentE
     List<SharedContentEntity> findByStatusOrderByCreatedAtDesc(com.example.tripplanner.domain.model.ShareStatus status);
 
     List<SharedContentEntity> findByUser(UserEntity user);
+
+    long countByStatus(com.example.tripplanner.domain.model.ShareStatus status);
+
+    @Query("SELECT s.user, COUNT(s) as count FROM SharedContentEntity s " +
+           "WHERE s.status = 'PUBLISHED' " +
+           "GROUP BY s.user " +
+           "ORDER BY count DESC")
+    List<Object[]> findTopContributors(Pageable pageable);
 }
