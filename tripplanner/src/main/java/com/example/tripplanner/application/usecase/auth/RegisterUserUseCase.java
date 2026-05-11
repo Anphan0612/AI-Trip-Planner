@@ -1,9 +1,9 @@
 package com.example.tripplanner.application.usecase.auth;
 
-import com.example.tripplanner.application.dto.AuthResponse;
-import com.example.tripplanner.application.dto.RegisterRequest;
-import com.example.tripplanner.application.dto.UserResponse;
-import com.example.tripplanner.application.port.PasswordEncoder;
+import com.example.tripplanner.application.dto.auth.AuthResponse;
+import com.example.tripplanner.application.dto.auth.RegisterRequest;
+import com.example.tripplanner.application.dto.auth.UserResponse;
+import com.example.tripplanner.application.security.PasswordEncoder;
 import com.example.tripplanner.domain.model.Role;
 import com.example.tripplanner.domain.model.User;
 import com.example.tripplanner.domain.port.UserRepository;
@@ -44,3 +44,4 @@ public class RegisterUserUseCase {
                 .build();
     }
 }
+

@@ -1,4 +1,6 @@
 package com.example.tripplanner.infrastructure.persistence;
+import com.example.tripplanner.infrastructure.persistence.entity.*;
+import com.example.tripplanner.infrastructure.persistence.repository.*;
 
 import com.example.tripplanner.domain.model.ExploreType;
 import lombok.RequiredArgsConstructor;

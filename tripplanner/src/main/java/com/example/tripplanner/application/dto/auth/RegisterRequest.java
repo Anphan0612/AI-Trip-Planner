@@ -1,0 +1,37 @@
+package com.example.tripplanner.application.dto.auth;
+
+import com.example.tripplanner.application.dto.trip.*;
+import com.example.tripplanner.application.dto.activity.*;
+import com.example.tripplanner.application.dto.itinerary.*;
+import com.example.tripplanner.application.dto.explore.*;
+import com.example.tripplanner.application.dto.community.*;
+import com.example.tripplanner.application.dto.auth.*;
+import com.example.tripplanner.application.dto.ai.*;
+
+
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class RegisterRequest {
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
+    private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, message = "Password must be at least 6 characters")
+    private String password;
+
+    @NotBlank(message = "Name is required")
+    private String name;
+}
+

@@ -1,6 +1,6 @@
 package com.example.tripplanner.interfaces.controller;
 
-import com.example.tripplanner.application.dto.RetryStatsDto;
+import com.example.tripplanner.application.dto.ai.RetryStatsDto;
 import com.example.tripplanner.application.service.AnalyticsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

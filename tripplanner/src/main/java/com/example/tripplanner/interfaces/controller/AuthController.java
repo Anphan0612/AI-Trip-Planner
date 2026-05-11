@@ -1,9 +1,9 @@
 package com.example.tripplanner.interfaces.controller;
 
-import com.example.tripplanner.application.dto.AuthResponse;
-import com.example.tripplanner.application.dto.LoginRequest;
-import com.example.tripplanner.application.dto.RegisterRequest;
-import com.example.tripplanner.application.dto.UserResponse;
+import com.example.tripplanner.application.dto.auth.AuthResponse;
+import com.example.tripplanner.application.dto.auth.LoginRequest;
+import com.example.tripplanner.application.dto.auth.RegisterRequest;
+import com.example.tripplanner.application.dto.auth.UserResponse;
 import com.example.tripplanner.application.usecase.auth.LoginUseCase;
 import com.example.tripplanner.application.usecase.auth.RegisterUserUseCase;
 import jakarta.validation.Valid;

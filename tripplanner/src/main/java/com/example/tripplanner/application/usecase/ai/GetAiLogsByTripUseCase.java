@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.ai;
 
-import com.example.tripplanner.application.dto.AiLogPageResponse;
-import com.example.tripplanner.application.dto.AiLogSummaryResponse;
+import com.example.tripplanner.application.dto.ai.AiLogPageResponse;
+import com.example.tripplanner.application.dto.ai.AiLogSummaryResponse;
 import com.example.tripplanner.application.mapper.AiLogMapper;
 import com.example.tripplanner.domain.model.AiLog;
 import com.example.tripplanner.domain.model.AiLogStatus;

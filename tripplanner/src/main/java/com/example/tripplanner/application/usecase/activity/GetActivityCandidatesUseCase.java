@@ -1,6 +1,6 @@
 package com.example.tripplanner.application.usecase.activity;
 
-import com.example.tripplanner.application.dto.ActivityCandidateResponse;
+import com.example.tripplanner.application.dto.activity.ActivityCandidateResponse;
 import com.example.tripplanner.application.mapper.TripMapper;
 import com.example.tripplanner.domain.model.Trip;
 import com.example.tripplanner.domain.port.TripRepository;

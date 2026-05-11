@@ -1,6 +1,6 @@
 package com.example.tripplanner.application.mapper;
 
-import com.example.tripplanner.application.dto.SharedContentResponse;
+import com.example.tripplanner.application.dto.community.SharedContentResponse;
 import com.example.tripplanner.domain.model.SharedContent;
 
 /**

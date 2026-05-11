@@ -1,6 +1,6 @@
 package com.example.tripplanner.infrastructure.security;
 
-import com.example.tripplanner.application.port.PasswordEncoder;
+import com.example.tripplanner.application.security.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -19,3 +19,4 @@ public class BCryptPasswordEncoderImpl implements PasswordEncoder {
         return bCryptPasswordEncoder.matches(rawPassword, encodedPassword);
     }
 }
+

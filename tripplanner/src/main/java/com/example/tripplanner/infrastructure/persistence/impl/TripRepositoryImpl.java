@@ -2,9 +2,9 @@ package com.example.tripplanner.infrastructure.persistence.impl;
 
 import com.example.tripplanner.domain.model.Trip;
 import com.example.tripplanner.domain.port.TripRepository;
-import com.example.tripplanner.infrastructure.persistence.JpaTripRepository;
+import com.example.tripplanner.infrastructure.persistence.repository.JpaTripRepository;
 import com.example.tripplanner.infrastructure.persistence.PersistenceMapper;
-import com.example.tripplanner.infrastructure.persistence.TripEntity;
+import com.example.tripplanner.infrastructure.persistence.entity.TripEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

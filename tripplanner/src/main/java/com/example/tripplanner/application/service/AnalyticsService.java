@@ -1,6 +1,6 @@
 package com.example.tripplanner.application.service;
 
-import com.example.tripplanner.application.dto.RetryStatsDto;
+import com.example.tripplanner.application.dto.ai.RetryStatsDto;
 import com.example.tripplanner.domain.model.AiLogStatus;
 import com.example.tripplanner.domain.port.AiLogRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
 package com.example.tripplanner.interfaces.controller;
 
-import com.example.tripplanner.application.dto.ActivityRequest;
-import com.example.tripplanner.application.dto.ActivityResponse;
-import com.example.tripplanner.application.dto.ActivityUpdateRequest;
+import com.example.tripplanner.application.dto.activity.ActivityRequest;
+import com.example.tripplanner.application.dto.activity.ActivityResponse;
+import com.example.tripplanner.application.dto.activity.ActivityUpdateRequest;
 import com.example.tripplanner.application.usecase.activity.CreateActivityUseCase;
 import com.example.tripplanner.application.usecase.activity.DeleteActivityUseCase;
 import com.example.tripplanner.application.usecase.activity.UpdateActivityUseCase;

@@ -1,6 +1,6 @@
 package com.example.tripplanner.infrastructure.security;
 
-import com.example.tripplanner.application.port.TokenProvider;
+import com.example.tripplanner.application.security.TokenProvider;
 import com.example.tripplanner.domain.model.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -71,3 +71,4 @@ public class JwtTokenProvider implements TokenProvider {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
+

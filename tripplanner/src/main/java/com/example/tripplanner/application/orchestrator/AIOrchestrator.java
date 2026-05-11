@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.orchestrator;
 
-import com.example.tripplanner.application.dto.GenerateRequest;
-import com.example.tripplanner.application.dto.RegenerateRequest;
+import com.example.tripplanner.application.dto.trip.GenerateRequest;
+import com.example.tripplanner.application.dto.trip.RegenerateRequest;
 import com.example.tripplanner.application.validator.ValidationResult;
 import com.example.tripplanner.application.validator.AiResponseValidator;
 import com.example.tripplanner.domain.model.*;

@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.activity;
 
-import com.example.tripplanner.application.dto.ActivityResponse;
-import com.example.tripplanner.application.dto.ActivityUpdateRequest;
+import com.example.tripplanner.application.dto.activity.ActivityResponse;
+import com.example.tripplanner.application.dto.activity.ActivityUpdateRequest;
 import com.example.tripplanner.application.mapper.TripMapper;
 import com.example.tripplanner.domain.model.Activity;
 import com.example.tripplanner.domain.port.ActivityRepository;

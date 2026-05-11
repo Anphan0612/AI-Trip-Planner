@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.community;
 
-import com.example.tripplanner.application.dto.CommentRequest;
-import com.example.tripplanner.application.dto.CommentResponse;
+import com.example.tripplanner.application.dto.community.CommentRequest;
+import com.example.tripplanner.application.dto.community.CommentResponse;
 import com.example.tripplanner.application.mapper.TripMapper;
 import com.example.tripplanner.domain.model.Comment;
 import com.example.tripplanner.domain.model.SharedContent;

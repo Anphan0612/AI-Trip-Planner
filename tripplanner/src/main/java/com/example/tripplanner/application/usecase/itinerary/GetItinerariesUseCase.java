@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.itinerary;
 
-import com.example.tripplanner.application.dto.ItineraryResponse;
-import com.example.tripplanner.application.dto.ItineraryUpdateRequest;
+import com.example.tripplanner.application.dto.itinerary.ItineraryResponse;
+import com.example.tripplanner.application.dto.itinerary.ItineraryUpdateRequest;
 import com.example.tripplanner.application.mapper.TripMapper;
 import com.example.tripplanner.domain.model.Itinerary;
 import com.example.tripplanner.domain.port.ItineraryRepository;

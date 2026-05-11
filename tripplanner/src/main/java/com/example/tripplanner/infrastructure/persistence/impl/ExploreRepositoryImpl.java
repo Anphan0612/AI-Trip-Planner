@@ -2,8 +2,8 @@ package com.example.tripplanner.infrastructure.persistence.impl;
 
 import com.example.tripplanner.domain.model.ExploreItem;
 import com.example.tripplanner.domain.port.ExploreRepository;
-import com.example.tripplanner.infrastructure.persistence.ExploreItemEntity;
-import com.example.tripplanner.infrastructure.persistence.JpaExploreItemRepository;
+import com.example.tripplanner.infrastructure.persistence.entity.ExploreItemEntity;
+import com.example.tripplanner.infrastructure.persistence.repository.JpaExploreItemRepository;
 import com.example.tripplanner.infrastructure.persistence.PersistenceMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.mapper;
 
-import com.example.tripplanner.application.dto.AiLogDetailResponse;
-import com.example.tripplanner.application.dto.AiLogSummaryResponse;
+import com.example.tripplanner.application.dto.ai.AiLogDetailResponse;
+import com.example.tripplanner.application.dto.ai.AiLogSummaryResponse;
 import com.example.tripplanner.domain.model.AiLog;
 
 public final class AiLogMapper {

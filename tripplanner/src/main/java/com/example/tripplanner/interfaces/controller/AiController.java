@@ -1,7 +1,7 @@
 package com.example.tripplanner.interfaces.controller;
 
-import com.example.tripplanner.application.dto.ParseTripRequest;
-import com.example.tripplanner.application.dto.ParseTripResult;
+import com.example.tripplanner.application.dto.trip.ParseTripRequest;
+import com.example.tripplanner.application.dto.trip.ParseTripResult;
 import com.example.tripplanner.application.service.AiProxyService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

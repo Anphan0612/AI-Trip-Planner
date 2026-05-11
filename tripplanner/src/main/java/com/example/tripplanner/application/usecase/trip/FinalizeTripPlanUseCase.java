@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.trip;
 
-import com.example.tripplanner.application.dto.FinalizeTripRequest;
-import com.example.tripplanner.application.dto.TripResponse;
+import com.example.tripplanner.application.dto.trip.FinalizeTripRequest;
+import com.example.tripplanner.application.dto.trip.TripResponse;
 import com.example.tripplanner.application.mapper.TripMapper;
 import com.example.tripplanner.domain.model.*;
 import com.example.tripplanner.domain.port.TripRepository;

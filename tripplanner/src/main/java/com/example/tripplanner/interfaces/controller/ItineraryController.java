@@ -1,8 +1,8 @@
 package com.example.tripplanner.interfaces.controller;
 
-import com.example.tripplanner.application.dto.ItineraryResponse;
-import com.example.tripplanner.application.dto.ItineraryUpdateRequest;
-import com.example.tripplanner.application.dto.RegenerateRequest;
+import com.example.tripplanner.application.dto.itinerary.ItineraryResponse;
+import com.example.tripplanner.application.dto.itinerary.ItineraryUpdateRequest;
+import com.example.tripplanner.application.dto.trip.RegenerateRequest;
 import com.example.tripplanner.application.usecase.itinerary.GetItinerariesUseCase;
 import com.example.tripplanner.application.usecase.trip.RegenerateSingleDayUseCase;
 import com.example.tripplanner.application.usecase.itinerary.UpdateItineraryUseCase;

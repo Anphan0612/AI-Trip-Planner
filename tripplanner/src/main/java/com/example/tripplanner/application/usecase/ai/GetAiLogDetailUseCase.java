@@ -1,6 +1,6 @@
 package com.example.tripplanner.application.usecase.ai;
 
-import com.example.tripplanner.application.dto.AiLogDetailResponse;
+import com.example.tripplanner.application.dto.ai.AiLogDetailResponse;
 import com.example.tripplanner.application.mapper.AiLogMapper;
 import com.example.tripplanner.domain.port.AiLogRepository;
 import jakarta.persistence.EntityNotFoundException;

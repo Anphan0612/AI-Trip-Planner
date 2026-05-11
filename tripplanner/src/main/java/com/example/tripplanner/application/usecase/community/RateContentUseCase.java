@@ -1,7 +1,7 @@
 package com.example.tripplanner.application.usecase.community;
 
-import com.example.tripplanner.application.dto.RateRequest;
-import com.example.tripplanner.application.dto.SharedContentResponse;
+import com.example.tripplanner.application.dto.community.RateRequest;
+import com.example.tripplanner.application.dto.community.SharedContentResponse;
 import com.example.tripplanner.application.mapper.SharedContentMapper;
 import com.example.tripplanner.domain.model.SharedContent;
 import com.example.tripplanner.domain.model.UserVote;

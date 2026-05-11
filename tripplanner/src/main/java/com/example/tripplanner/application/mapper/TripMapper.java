@@ -1,15 +1,17 @@
 package com.example.tripplanner.application.mapper;
 
-import com.example.tripplanner.application.dto.ActivityResponse;
-import com.example.tripplanner.application.dto.ItineraryResponse;
-import com.example.tripplanner.application.dto.RecommendationResponse;
-import com.example.tripplanner.application.dto.TripResponse;
+import com.example.tripplanner.application.dto.activity.ActivityResponse;
+import com.example.tripplanner.application.dto.activity.ActivityCandidateResponse;
+import com.example.tripplanner.application.dto.itinerary.ItineraryResponse;
+import com.example.tripplanner.application.dto.explore.RecommendationResponse;
+import com.example.tripplanner.application.dto.trip.TripResponse;
 import com.example.tripplanner.domain.model.Activity;
+import com.example.tripplanner.domain.model.ActivityCandidate;
 import com.example.tripplanner.domain.model.Itinerary;
 import com.example.tripplanner.domain.model.Recommendation;
 import com.example.tripplanner.domain.model.Trip;
 import com.example.tripplanner.domain.model.User;
-import com.example.tripplanner.application.dto.UserResponse;
+import com.example.tripplanner.application.dto.auth.UserResponse;
 
 import java.util.List;
 
@@ -94,15 +96,15 @@ public final class TripMapper {
                                 .build();
         }
 
-        public static com.example.tripplanner.application.dto.ActivityCandidateResponse toActivityCandidateResponse(
-                        com.example.tripplanner.domain.model.ActivityCandidate candidate) {
-                return com.example.tripplanner.application.dto.ActivityCandidateResponse.builder()
-                                .id(candidate.getId())
-                                .name(candidate.getName())
-                                .description(candidate.getDescription())
-                                .location(candidate.getLocation())
-                                .cost(candidate.getCost())
-                                .selected(candidate.isSelected())
-                                .build();
-        }
+    public static ActivityCandidateResponse toActivityCandidateResponse(
+            ActivityCandidate candidate) {
+        return ActivityCandidateResponse.builder()
+                .id(candidate.getId())
+                .name(candidate.getName())
+                .description(candidate.getDescription())
+                .location(candidate.getLocation())
+                .cost(candidate.getCost())
+                .selected(candidate.isSelected())
+                .build();
+    }
 }
