@@ -26,8 +26,19 @@ public class AiProxyService {
     public ParseTripResult parseTrip(ParseTripRequest request) {
         String url = aiServiceUrl + "/parse-query";
         
+        String userId = null;
+        try {
+            org.springframework.security.core.Authentication auth = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+            if (auth != null && auth.getPrincipal() instanceof com.example.tripplanner.infrastructure.security.UserPrincipal) {
+                userId = ((com.example.tripplanner.infrastructure.security.UserPrincipal) auth.getPrincipal()).getId().toString();
+            }
+        } catch (Exception e) {
+            log.warn("Could not get userId from security context: {}", e.getMessage());
+        }
+
         AiServiceParseRequest pythonRequest = AiServiceParseRequest.builder()
                 .text(request.getDescription())
+                .userId(userId)
                 .build();
 
         log.info("Calling Python AI service at {}", url);
@@ -63,6 +74,7 @@ public class AiProxyService {
                     .rawSummary(request.getDescription())
                     .startDate(entities.getStartDate())
                     .endDate(entities.getEndDate())
+                    .destinationIsSuggested(entities.isDestinationIsSuggested())
                     .build();
         } catch (Exception e) {
             log.error("Failed to connect to Python AI service: {}", e.getMessage());

@@ -20,5 +20,7 @@ public class AiServiceEntityResponse {
     private String startDate;
     @JsonProperty("end_date")
     private String endDate;
+    @JsonProperty("destination_is_suggested")
+    private boolean destinationIsSuggested;
 }
 

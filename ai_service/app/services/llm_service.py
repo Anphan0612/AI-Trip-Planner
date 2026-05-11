@@ -11,36 +11,29 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 class LLMService:
-    SYSTEM_PROMPT = """You are an AI assistant that completes missing travel information using context.
+    SYSTEM_PROMPT = """Bạn là một chuyên gia phân tích dữ liệu du lịch chuyên nghiệp. Nhiệm vụ của bạn là hoàn thiện và sửa lỗi các thông tin trích xuất từ yêu cầu của người dùng.
 
-You are given:
-1. Current user input
-2. Previously extracted entities
-3. User profile (preferences)
+Dữ liệu đầu vào:
+1. Câu lệnh của người dùng: "{text}"
+2. Dữ liệu đã trích xuất sơ bộ: {entities_json}
+3. Hồ sơ sở thích của người dùng: {user_profile_json}
 
-Your job:
-- Fill missing or unclear fields.
-- For budget: If user says "2 triệu" or "2tr", budget should be 2000000. ALWAYS return the full number in VND.
-- For travelers: If user says "đi một mình" or "solo", return 1. If "cặp đôi", return 2.
-- For origin: Extract the starting point if mentioned (e.g., "đi từ Hà Nội" -> origin: "Hà Nội").
-- For duration: If user says "X ngày Y đêm", duration_days should be X (e.g., "3 ngày 2 đêm" -> duration_days: 3).
-- For dates: If user says "ngày mai", "ngày kia", etc., try to infer duration or leave it for the pipeline.
+Quy tắc quan trọng:
+- Budget: Chuyển đổi "tr", "triệu" thành số đầy đủ (VD: 2tr -> 2000000). Luôn trả về số nguyên.
+- Travelers: "đi một mình", "solo" -> 1; "cặp đôi", "người yêu" -> 2; "gia đình" -> 4.
+- Origin: Trích xuất nơi khởi hành (VD: "từ Hà Nội" -> origin: "Hà Nội").
+- Duration: Ưu tiên số ngày (VD: "3 ngày 2 đêm" -> duration_days: 3).
+- Vibe: Xác định phong cách (chill, khám phá, nghỉ dưỡng, sang chảnh...).
+- Gợi ý điểm đến (Vague Query): Nếu người dùng KHÔNG nhập điểm đến (VD: "Tôi muốn đi đâu đó", "Gợi ý cho mình"), hãy dựa vào hồ sơ sở thích để chọn 1 địa điểm phù hợp (BẮT BUỘC phải có tên địa danh cụ thể). Khi đó, hãy đặt `destination_is_suggested: true`. Nếu người dùng CÓ nhập điểm đến, đặt `destination_is_suggested: false`.
 
-Input:
-User input: "{text}"
-Current entities: {entities_json}
-User profile: {user_profile_json}
+Ví dụ:
+Input: "đi đà lạt 3 ngày 2tr chill solo"
+Output: {{"destination": "Đà Lạt", "vibe": "chill", "budget": 2000000, "duration_days": 3, "travelers": 1, "destination_is_suggested": false}}
 
-Return JSON ONLY:
-{{
-  "destination": string or null,
-  "origin": string or null,
-  "vibe": string or null,
-  "budget": number or null,
-  "duration_days": number or null,
-  "group_type": string or null,
-  "travelers": number or null
-}}"""
+Input: "đi đâu đó nghỉ dưỡng"
+Output: {{"destination": "Phú Quốc", "vibe": "nghỉ dưỡng", "destination_is_suggested": true}}
+
+Yêu cầu: CHỈ trả về JSON, không giải thích gì thêm."""
 
     ITINERARY_SYSTEM_PROMPT = """You are a travel planner AI.
 
@@ -286,9 +279,10 @@ Return JSON ONLY:
             logger.info("Using mock repair logic.")
             llm_output = {}
             if not current_entities.get("destination"):
-                llm_output["destination"] = "[LLM Repaired] Điểm đến ẩn"
+                llm_output["destination"] = "Đà Lạt"
+                llm_output["destination_is_suggested"] = True
             if not current_entities.get("vibe"):
-                llm_output["vibe"] = "[LLM Repaired] Tự do"
+                llm_output["vibe"] = "chill"
 
         repaired = self._merge_entities(current_entities, llm_output)
         

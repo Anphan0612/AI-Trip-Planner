@@ -21,7 +21,8 @@ class ConfidenceService:
         overall_confidence = (regex_score * 0.6) + (classifier_score * 0.4)
         
         # Flag if LLM is needed
-        needs_llm = overall_confidence < 0.65
+        # Force LLM if destination is missing to allow for AI suggestions
+        needs_llm = (overall_confidence < 0.65) or (entities.get("destination") is None)
         
         return overall_confidence, needs_llm
 

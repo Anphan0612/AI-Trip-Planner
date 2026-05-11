@@ -15,5 +15,6 @@ public class ParseTripResult {
     private String budgetTier;
     private List<String> travelStyles;
     private String rawSummary;
+    private boolean destinationIsSuggested;
 }
 

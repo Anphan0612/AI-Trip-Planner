@@ -15,8 +15,15 @@ import datetime
 from datetime import timedelta
 
 class ParsePipeline:
-    async def execute(self, text: str, user_profile: Dict[str, Any] = None) -> ParseResponse:
-        logger.info(f"--- Processing Query: '{text}' ---")
+    async def execute(self, text: str, user_id: str = None) -> ParseResponse:
+        """
+        Execute the full parsing pipeline.
+        """
+        logger.info(f"--- Processing Query: '{text}' for user: {user_id} ---")
+        
+        # In a real app, fetch user_profile from DB using user_id
+        user_profile = {} 
+        # (Chỗ này sau này bạn có thể viết code fetch DB thực tế)
         
         # 1. Layer 1: Extract Entities (Regex)
         entities_dict = entity_extractor.extract(text)

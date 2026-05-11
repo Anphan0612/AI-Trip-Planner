@@ -12,7 +12,7 @@ async def parse_query(request: ParseRequest):
     Parse a natural language travel query into structured data.
     """
     try:
-        result = await parse_pipeline.execute(request.text)
+        result = await parse_pipeline.execute(request.text, request.user_id)
         return result
     except Exception as e:
         # In production, log the error properly
