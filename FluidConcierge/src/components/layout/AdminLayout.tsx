@@ -12,11 +12,9 @@ export default function AdminLayout() {
   };
 
   const navItems = [
-    { name: 'Dashboard', path: '/admin/dashboard', icon: 'grid_view' },
     { name: 'Users', path: '/admin/users', icon: 'group' },
     { name: 'Places', path: '/admin/places', icon: 'location_on' },
     { name: 'Community', path: '/admin/community', icon: 'chat_bubble' },
-    { name: 'AI Config', path: '/admin/config', icon: 'psychology' },
   ];
 
   return (

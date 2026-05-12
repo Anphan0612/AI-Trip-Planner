@@ -172,6 +172,7 @@ export interface UserResponse {
   email: string;
   name: string;
   role: string;
+  avatar?: string;
 }
 
 export interface SharedContentResponse {
@@ -198,6 +199,7 @@ export interface AdminUserResponse {
   email: string;
   name: string;
   role: string;
+  avatar?: string;
   status: 'ACTIVE' | 'LOCKED' | 'DELETED';
   createdAt: string;
   lastActiveAt: string | null;
