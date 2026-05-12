@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type React from 'react';
 import { communityApi } from '../services/api';
 
 interface UseShareExperienceProps {
   type: 'ACTIVITY' | 'TRIP' | 'EXPLORE_ITEM';
   refId: string;
-  onSuccess: () => void;
-  onClose: () => void;
+  onSuccess?: () => void;
+  onClose?: () => void;
 }
 
-export const useShareExperience = ({ type, refId, onSuccess, onClose }: UseShareExperienceProps) => {
+export const useShareExperience = ({ type, refId }: UseShareExperienceProps) => {
   const [rating, setRating] = useState<number>(5);
   const [description, setDescription] = useState('');
   const [tip, setTip] = useState('');

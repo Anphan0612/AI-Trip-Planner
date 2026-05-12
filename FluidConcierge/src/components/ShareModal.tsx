@@ -31,7 +31,6 @@ const ShareModal: React.FC<ShareModalProps> = ({
     specificLocation,
     setSpecificLocation,
     loading,
-    images,
     previews,
     handleImageChange,
     removeImage,

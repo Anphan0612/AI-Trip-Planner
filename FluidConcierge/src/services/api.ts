@@ -12,10 +12,7 @@ import type {
   ActivityUpdateRequest,
   ShareContentRequest,
   SharedContentResponse,
-  UserResponse,
-  CommentRequest,
   CommentResponse,
-  RateRequest,
   ExploreItem,
   AdminUserResponse,
 } from '../types/trip';

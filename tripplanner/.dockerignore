@@ -1,0 +1,12 @@
+target/
+.idea/
+.vscode/
+*.iml
+.env
+.git
+.gitignore
+uploads/
+postman.json
+api-test.http
+HELP.md
+*.log

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { communityApi, adminApi } from '../../services/api';
 import type { SharedContentResponse } from '../../types/trip';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Community() {
   const [pendingItems, setPendingItems] = useState<SharedContentResponse[]>([]);
   const [trendingTrips, setTrendingTrips] = useState<SharedContentResponse[]>([]);
-  const [trendingActivities, setTrendingActivities] = useState<SharedContentResponse[]>([]);
+  const [, setTrendingActivities] = useState<SharedContentResponse[]>([]);
   const [topContributors, setTopContributors] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [archivedCount, setArchivedCount] = useState(0);
+  const [, setArchivedCount] = useState(0);
 
   useEffect(() => {
     Promise.all([

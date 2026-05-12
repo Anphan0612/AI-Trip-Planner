@@ -1,0 +1,139 @@
+# ==========================================================
+# 🚀 AI Trip Planner - Docker Compose
+# ==========================================================
+# Usage:
+#   docker compose up -d          → Start all services
+#   docker compose up -d --build  → Rebuild and start
+#   docker compose down            → Stop all services
+#   docker compose logs -f         → Follow all logs
+#   docker compose logs backend    → Backend logs only
+# ==========================================================
+
+services:
+
+  # ─────────────────────────────────────────
+  # 🐬 MySQL Database
+  # ─────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: tripplanner-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root1234}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-trip}
+      MYSQL_USER: ${MYSQL_USER:-tripuser}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-trippass123}
+    ports:
+      - "${MYSQL_PORT:-3308}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - tripplanner-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-root1234}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ─────────────────────────────────────────
+  # ☕ Spring Boot Backend
+  # ─────────────────────────────────────────
+  backend:
+    build:
+      context: ./tripplanner
+      dockerfile: Dockerfile
+    container_name: tripplanner-backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      # Database
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE:-trip}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER:-tripuser}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:-trippass123}
+      # JPA
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+      # Server
+      SERVER_PORT: 8090
+      # AI Service
+      AI_SERVICE_URL: http://ai-service:8000/ai
+      # 9Router API
+      ROUTER9_API_KEY: ${ROUTER9_API_KEY:-}
+      ROUTER9_API_URL: ${ROUTER9_API_URL:-http://localhost:20128/v1/chat/completions}
+      # Java options
+      JAVA_OPTS: "-Xms256m -Xmx512m"
+    ports:
+      - "${BACKEND_PORT:-8090}:8090"
+    volumes:
+      - backend_uploads:/app/uploads
+    networks:
+      - tripplanner-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8090/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ─────────────────────────────────────────
+  # 🐍 Python AI Service (FastAPI)
+  # ─────────────────────────────────────────
+  ai-service:
+    build:
+      context: ./ai_service
+      dockerfile: Dockerfile
+    container_name: tripplanner-ai-service
+    restart: unless-stopped
+    environment:
+      PYTHONUNBUFFERED: 1
+    ports:
+      - "${AI_SERVICE_PORT:-8000}:8000"
+    networks:
+      - tripplanner-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ─────────────────────────────────────────
+  # ⚛️ React Frontend (Nginx)
+  # ─────────────────────────────────────────
+  frontend:
+    build:
+      context: ./FluidConcierge
+      dockerfile: Dockerfile
+    container_name: tripplanner-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    networks:
+      - tripplanner-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+# ─────────────────────────────────────────
+# 📦 Volumes
+# ─────────────────────────────────────────
+volumes:
+  mysql_data:
+    driver: local
+  backend_uploads:
+    driver: local
+
+# ─────────────────────────────────────────
+# 🌐 Networks
+# ─────────────────────────────────────────
+networks:
+  tripplanner-network:
+    driver: bridge

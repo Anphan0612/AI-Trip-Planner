@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { exploreApi, communityApi } from '../../services/api';
+import { communityApi } from '../../services/api';
 import type { ExploreItem, SharedContentResponse } from '../../types/trip';
 import CommunityActivityCard from './CommunityActivityCard';
 import ShareModal from '../ShareModal';
